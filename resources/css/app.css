@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html{
+    @apply bg-primary-900;
+}
+
+.container{
+    max-width: 1250px;
+    @apply mx-auto px-4;
+}
+
+.container-fluid{
+    @apply mx-auto px-10;
+    max-width: 1400px;
+}
+
+.pre-header{
+   @apply bg-primary-100 text-white py-2; 
+}
+
+.cover .header.fixed{
+    background-color: #3E486B;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 1rem 0;
+}
+
+.cover .header.fixed .logo img{
+    width: 150px;
+}
+
+
+.cover{
+    @apply bg-cover bg-center bg-no-repeat bg-fixed bg-primary-900 py-16 relative;
+}
+
+.cover video{
+    @apply absolute top-0 left-0 w-full h-full object-cover z-0;
+}
+
+.cover:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    @apply bg-gradient-to-t from-transparent to-primary-900 opacity-75;
+}
+
+.cover header, .cover .container{
+    @apply relative z-10;
+}
+
+.cover .logo{
+    @apply w-52 h-auto;
+}
+
+.cover .nav{
+    @apply flex justify-between items-center space-x-3;
+}
+
+.cover .nav a{
+    @apply text-white font-bold uppercase text-sm;
+}
+
+.cover .nav a:hover{
+    @apply underline text-secondary-100;
+}
+
+.cover-form{
+    @apply bg-primary-900 bg-opacity-50 rounded-lg shadow-lg p-8;
+}
+
+h1{
+    @apply text-5xl font-bold mb-9 leading-tight;
+}
+h2{
+    @apply text-3xl font-bold mb-6 leading-tight;
+}
+h3{
+    @apply text-2xl font-bold mb-4 leading-tight;
+}
+h4{
+    @apply text-xl font-bold mb-3 leading-tight;
+}
+
+p{
+    @apply text-base mb-4;
+}
+
+.link{
+    @apply underline font-bold;
+}
+
+.form-group{
+    @apply mb-6;
+}
+
+.form-control[type="text"][placeholder]{
+    @apply block w-full rounded-lg bg-white bg-opacity-25 border-0 px-4 py-3 placeholder-white;
+}
+
+.btn{
+    @apply block w-full rounded-lg font-bold py-3;
+}
+.btn-secondary{
+    @apply bg-secondary-100 text-primary-900;
+}
+
+.img-gradient-overlay{
+    @apply relative overflow-hidden bg-center bg-cover bg-no-repeat;
+}
+
+.img-gradient-overlay:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @apply bg-gradient-to-b from-transparent to-primary-900 opacity-75;
+}
+
+.article-thumb{
+    @apply bg-center bg-cover bg-no-repeat shadow-md;
+}
+
+.events{
+    @apply py-24 bg-primary-900 bg-center bg-cover bg-no-repeat bg-fixed relative
+}
+
+.events:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    @apply opacity-50 bg-gradient-to-t from-transparent to-primary-900;
+}
+
+.events video{
+    z-index: 1;
+    @apply absolute inset-0 w-full h-full object-cover;
+}
+
+.eventSlider{
+    @apply bg-primary-900 bg-cover bg-center bg-no-repeat bg-opacity-75 p-10 flex items-stretch justify-between space-x-10 shadow rounded-lg;
+}
+
+.footer{
+    @apply bg-primary-900 text-white py-16;
+}

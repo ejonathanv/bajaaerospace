@@ -7,7 +7,7 @@ body, html{
 }
 
 .container{
-    max-width: 1250px;
+    max-width: 1150px;
     @apply mx-auto px-4;
 }
 
@@ -17,7 +17,7 @@ body, html{
 }
 
 .pre-header{
-   @apply bg-primary-100 text-white py-2; 
+   @apply bg-logo-blue text-white py-2; 
 }
 
 .cover .header.fixed{
@@ -79,8 +79,12 @@ body, html{
     @apply bg-primary-900 bg-opacity-50 rounded-lg shadow-lg p-8;
 }
 
+h1,h2,h3,h4,h5,h6{
+    @apply uppercase leading-relaxed;
+}
+
 h1{
-    @apply text-5xl font-bold mb-9 leading-tight;
+    @apply text-4xl font-bold mb-9 leading-relaxed;
 }
 h2{
     @apply text-3xl font-bold mb-6 leading-tight;
@@ -159,4 +163,13 @@ p{
 
 .footer{
     @apply bg-primary-900 text-white py-16;
+}
+
+/* BUTTONS */
+.btn{
+    @apply rounded font-bold py-2 px-3 text-center inline-block;
+}
+
+.btn-primary{
+    @apply bg-logo-blue text-white;
 }

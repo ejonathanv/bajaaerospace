@@ -25,25 +25,6 @@
         Your browser does not support the video tag.
     </video>
 
-    <header class="header" :class="headerFixed ? 'fixed' : ''">
-        <div class="container">
-            <div class="flex items-center justify-between">
-                <a href="#" class="logo">
-                    <img src="{{ asset('img/logo_baja_aerospace_cluster.png') }}" alt="Baja Aerospace Cluster">
-                </a>
-                <nav class="nav">
-                    <a href="#">Home</a>
-                    <a href="#">Cluster BC</a>
-                    <a href="#">Industry</a>
-                    <a href="#">Academy</a>
-                    <a href="#">Technology</a>
-                    <a href="#">Events</a>
-                    <a href="#">News</a>
-                    <a href="#">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
+    <x-website.header-links></x-website.header-links>
     <x-website.cover></x-website.cover>
 </section>

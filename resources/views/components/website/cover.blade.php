@@ -1,7 +1,7 @@
 <div class="container pt-24">
     <div class="flex items-center space-x-16">
         <div class="w-7/12">
-            <h1 class="text-white">
+            <h1 class="text-white uppercase">
                 An internationally recognized entity supporting and servicing the aerospace industry.
             </h1>
             <p class="text-white">

@@ -19,6 +19,7 @@ export default {
                 'primary-900': '#3E486B',
                 'secondary-100': '#FDDE8E',
                 'secondary-900': '#D4B156',
+                'logo-blue': '#36abc7',
             },
         },
     },

@@ -7,9 +7,9 @@
         </div>
 
         <div class="w-3/12">
-            <h2 class="text-white">
+            <h3 class="text-white">
                 Quick links
-            </h2>
+            </h3>
 
             <nav class="text-white flex flex-col space-y-2 text-sm font-bold">
                 <a href="#">Home</a>
@@ -19,13 +19,14 @@
                 <a href="#">Webinars</a>
                 <a href="#">Contact</a>
                 <a href="#">Policies</a>
+                <a href="{{ route('login') }}">Login</a>
             </nav>
         </div>
 
         <div class="w-6/12">
-            <h2>
+            <h3>
                 Cluster B.C.
-            </h2>
+            </h3>
 
             <p class="text-md">
                 The Baja California Aerospace Cluster is a non-profit organization that promotes the development of the aerospace industry in Baja California, Mexico.

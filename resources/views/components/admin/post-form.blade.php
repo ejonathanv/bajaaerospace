@@ -1,5 +1,4 @@
 <div class="bt-white p-5 shadow rounded bg-white">
-
     <h4 class="!leading-relaxed !mb-4">
         @if($method === 'PUT')
             Edit post
@@ -8,8 +7,14 @@
         @endif
     </h4>
 
-    <form action="{{ $route }}" method="POST" enctype="multipart/form-data">
 
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <form action="{{ $route }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         @if($method === 'PUT')
@@ -63,4 +68,18 @@
             @endif
         </x-primary-button>
     </form>
+
+    @if($post)
+
+        <hr class="my-5">
+
+        <form action="{{ route('posts.destroy', $post) }}" method="POST" class="mt-5" onsubmit="return confirm('Are you sure you want to delete this post?')">
+            @csrf
+            @method('DELETE')
+
+            <x-danger-button>
+                Delete post
+            </x-danger-button>
+        </form>
+    @endif
 </div>

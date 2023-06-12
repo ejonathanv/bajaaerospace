@@ -6,27 +6,14 @@
             </a>
             <nav class="nav">
                 <a href="{{ route('home') }}">Home</a>
-                <a href="{{ route('page', 'cluster-bc') }}">
-                    Cluster BC
+                @foreach($pages as $page)
+                <a href="{{ route('page', $page->slug) }}">
+                    {{ $page->name_on_navbar }}
                 </a>
-                <a href="{{ route('page', 'aerospace-industry') }}">
-                    Industry
-                </a>
-                <a href="{{ route('page', 'aerospace-academy') }}">
-                    Academy
-                </a>
-                <a href="{{ route('page', 'aerospace-technology') }}">
-                    Technology
-                </a>
-                <a href="{{ route('page', 'events') }}">
-                    Events
-                </a>
-                <a href="{{ route('page', 'news') }}">
-                    News
-                </a>
-                <a href="{{ route('page', 'contact') }}">
-                    Contact
-                </a>
+                @endforeach
+                <a href="{{ route('events') }}">Events</a>
+                <a href="{{ route('blog') }}">Blog</a>
+                <a href="{{ route('contact') }}">Contact us</a>
             </nav>
         </div>
     </div>

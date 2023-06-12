@@ -20,19 +20,24 @@ class PageFactory extends Factory
 
         $title = $this->faker->sentence(3);
         $slug = Str::slug($title);
+        $add_to_navbar = $this->faker->boolean();
+        $name = $add_to_navbar ? $this->faker->word() : null;
 
         return [
             'title' => $title,
             'subtitle' => $this->faker->sentence(6),
             'slug' => $slug,
             'content' => $this->faker->paragraph(10),
-            'cover' => $this->faker->imageUrl(1200, 600),
+            'cover' => 'default.jpg',
             'published' => true,
             'template' => 'default',
             'category' => 'uncategorized',
             'tags' => 'test',
             'meta_title' => $title,
             'meta_description' => $this->faker->paragraph(2),
+            'add_to_navbar' => $add_to_navbar,
+            'add_to_footer' => $add_to_navbar,
+            'name_on_navbar' => $name,
         ];
     }
 }

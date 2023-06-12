@@ -6,19 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class PageHeader extends Component
+class RecentPostsList extends Component
 {
-
-    public $title;
-    public $subtitle;
-
     /**
      * Create a new component instance.
      */
-    public function __construct($title = null, $subtitle = null)
+    public function __construct()
     {
-        $this->title = $title;
-        $this->subtitle = $subtitle;
+        //
     }
 
     /**
@@ -26,6 +21,6 @@ class PageHeader extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.website.page-header');
+        return view('components.website.recent-posts-list');
     }
 }

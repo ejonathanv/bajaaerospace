@@ -1,3 +1,4 @@
+{{--
 <section class="pre-header">
     <div class="container">
         <div class="flex items-center justify-between">
@@ -18,6 +19,7 @@
         </div>
     </div>
 </section>
+--}}
 
 <section class="cover shadow-lg">
     <video autoplay loop muted>

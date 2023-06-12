@@ -1,24 +1,22 @@
 <?php
 
-namespace App\View\Components\Website;
+namespace App\View\Components\Admin;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class PageHeader extends Component
+class PageListItem extends Component
 {
 
-    public $title;
-    public $subtitle;
+    public $page;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($title = null, $subtitle = null)
+    public function __construct($page = null)
     {
-        $this->title = $title;
-        $this->subtitle = $subtitle;
+        $this->page = $page;
     }
 
     /**
@@ -26,6 +24,6 @@ class PageHeader extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.website.page-header');
+        return view('components.admin.page-list-item');
     }
 }

@@ -1,3 +1,4 @@
+{{--
 <section class="pre-header">
     <div class="container">
         <div class="flex items-center justify-between">
@@ -18,6 +19,7 @@
         </div>
     </div>
 </section>
+--}}
 
 <section class="cover shadow-lg">
     <video autoplay loop muted>
@@ -25,7 +27,5 @@
         Your browser does not support the video tag.
     </video>
     <x-website.header-links></x-website.header-links>
-    @isset($page)
-    <x-website.page-cover :page="$page"></x-website.page-cover>
-    @endisset
+    <x-website.page-cover title="{{$title}}" subtitle="{{$subtitle}}"></x-website.page-cover>
 </section>

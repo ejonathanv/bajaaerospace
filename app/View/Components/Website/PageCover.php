@@ -9,14 +9,16 @@ use Illuminate\View\Component;
 class PageCover extends Component
 {
 
-    public $page;
+    public $title;
+    public $subtitle;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($page = null)
+    public function __construct($title = null, $subtitle = null)
     {
-        $this->page = $page;
+        $this->title = $title;
+        $this->subtitle = $subtitle;
     }
 
     /**

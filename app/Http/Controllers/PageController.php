@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
+use Illuminate\Support\Str;
 use App\Http\Requests\StorePageRequest;
 use App\Http\Requests\UpdatePageRequest;
-use App\Models\Page;
 
 class PageController extends Controller
 {
@@ -13,7 +14,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        //
+        $pages = Page::orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.pages.index', compact('pages'));
     }
 
     /**
@@ -21,7 +23,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.create');
     }
 
     /**
@@ -29,7 +31,33 @@ class PageController extends Controller
      */
     public function store(StorePageRequest $request)
     {
-        //
+        $page = new Page();
+        $page->title = $request->title;
+        $page->subtitle = $request->subtitle;
+        $page->slug = Str::slug($request->title);
+        $page->content = $request->content;
+        $page->published = $request->has('published') ? true : false;
+        $page->add_to_navbar = $request->has('add_to_navbar') ? true : false;
+        $page->add_to_footer = $request->has('add_to_footer') ? true : false;
+        $page->name_on_navbar = $request->name_on_navbar;
+
+        $page->save();
+
+        if($request->has('cover')){
+            $this->uploadCover($request, $page);
+        }
+
+        return redirect()->route('pages.show', $page)->with('success', 'Page created successfully!');
+    }
+
+    public function uploadCover($request, $page){
+        $file = $request->file('cover');
+        $fileName = hexdec(uniqid()) . '.' . $file->getClientOriginalExtension();
+        // We need to move this file to public/posts folder
+        $file->move('pages', $fileName);
+
+        $page->cover = $fileName;
+        $page->save();
     }
 
     /**
@@ -37,7 +65,7 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        //
+        return view('admin.pages.show', compact('page'));
     }
 
     /**
@@ -53,7 +81,23 @@ class PageController extends Controller
      */
     public function update(UpdatePageRequest $request, Page $page)
     {
-        //
+
+        $page->title = $request->title;
+        $page->subtitle = $request->subtitle;
+        $page->slug = Str::slug($request->title);
+        $page->content = $request->content;
+        $page->published = $request->has('published') ? true : false;
+        $page->add_to_navbar = $request->has('add_to_navbar') ? true : false;
+        $page->add_to_footer = $request->has('add_to_footer') ? true : false;
+        $page->name_on_navbar = $request->name_on_navbar;
+
+        $page->save();
+
+        if($request->has('cover')){
+            $this->uploadCover($request, $page);
+        }
+
+        return redirect()->route('pages.show', $page)->with('success', 'Page updated successfully!');
     }
 
     /**
@@ -61,6 +105,7 @@ class PageController extends Controller
      */
     public function destroy(Page $page)
     {
-        //
+        $page->delete();
+        return redirect()->route('pages.index')->with('success', 'Page deleted successfully!');
     }
 }

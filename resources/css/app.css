@@ -173,3 +173,11 @@ p{
 .btn-primary{
     @apply bg-logo-blue text-white;
 }
+
+/* ALERT */
+.alert{
+    @apply rounded-lg p-4 mb-4;
+}
+.alert-success{
+    @apply bg-logo-blue bg-opacity-25 text-logo-blue;
+}

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl leading-tight !mb-0">
-            Posts list
+            Pages list
         </h2>
     </x-slot>
 
@@ -12,12 +12,12 @@
 
                     <div class="flex items-center justify-between mb-7">
                         <h3 class="!m-0">
-                            Posts list
+                            Pages list
                         </h3>
 
                         <div>
-                            <a href="{{ route('posts.create') }}" class="btn btn-primary">
-                                New Post
+                            <a href="{{ route('pages.create') }}" class="btn btn-primary">
+                                New Page
                             </a>
                         </div>
                     </div>
@@ -31,13 +31,13 @@
                     <hr class="my-5">
 
                     <ul class="flex flex-col space-y-7">
-                        @foreach($posts as $post)
-                            <x-admin.post-list-item :post="$post"></x-admin.post-list-item>
+                        @foreach($pages as $page)
+                            <x-admin.page-list-item :page="$page"></x-admin.page-list-item>
                         @endforeach
                     </ul>
 
                     <div class="mt-5">
-                        {{ $posts->links() }}
+                        {{ $pages->links() }}
                     </div>
                 </div>
             </div>

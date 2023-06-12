@@ -16,7 +16,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased" id="app">
-        <x-website.page-header :page="$page"></x-website.page-header>
+        <x-website.page-header title="{{ $title }}" subtitle="{{ $subtitle }}"></x-website.page-header>
         <div class="bg-white">
         {{ $slot }}
         </div>

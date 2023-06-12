@@ -44,7 +44,7 @@ class PostController extends Controller
             $this->uploadCover($request, $post);
         }
 
-        return redirect()->route('posts.show', $post);
+        return redirect()->route('posts.show', $post)->with('success', 'Post created successfully!');
     }
 
     /**
@@ -80,7 +80,7 @@ class PostController extends Controller
             $this->uploadCover($request, $post);
         }
 
-        return redirect()->route('posts.show', $post);
+        return redirect()->route('posts.show', $post)->with('success', 'Post updated successfully!');
     }
 
     public function uploadCover($request, $post)
@@ -99,6 +99,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('posts.index')->with('success', 'Post deleted successfully!');
     }
 }

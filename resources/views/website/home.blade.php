@@ -39,13 +39,18 @@
                 & Webinars
                 </h1>
 
-                <a href="#" class="text-yellow-300 font-bold hover:underline">
-                    View all events
-                </a>
+                <div>
+                    <a href="#" class="btn btn-secondary">
+                        View all events
+                    </a>
+                </div>
             </div>
             <div class="w-8/12">
                 <div class="eventSlider">
                     <div class="flex flex-col w-7/12">
+                        <p class="font-bold text-white text-sm !mb-3">
+                            Next event
+                        </p>
                         <h2 class="text-white !mb-6">
                             This is the title of the event and will be displayed here
                         </h2>

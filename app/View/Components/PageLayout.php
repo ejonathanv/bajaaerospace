@@ -9,16 +9,16 @@ use Illuminate\View\Component;
 class PageLayout extends Component
 {
 
-    public $page;
     public $title;
+    public $subtitle;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($title = null, $page = null)
+    public function __construct($title = null, $subtitle = null)
     {
         $this->title = $title;
-        $this->page = $page;
+        $this->subtitle = $subtitle;
     }
 
     /**

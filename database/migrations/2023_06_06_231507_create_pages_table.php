@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-
             $table->string('title')->unique();
             $table->string('subtitle')->nullable();
             $table->string('slug')->unique();
@@ -25,6 +24,9 @@ return new class extends Migration
             $table->string('tags')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
+            $table->string('add_to_navbar')->default(false);
+            $table->string('add_to_footer')->default(false);
+            $table->string('name_on_navbar')->nullable();
 
             $table->timestamps();
         });

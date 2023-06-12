@@ -4,7 +4,7 @@
             <h5 class="text-white relative z-2 font-bold uppercase !leading-tight">
                 {{ $recentPost->created_at->format('d M Y') }}
             </h5>
-            <a href="#" class="mt-auto !mb-0 !leading-relaxed text-white relative z-2">
+            <a href="{{ route('post', $recentPost->slug) }}" class="mt-auto !mb-0 !leading-relaxed text-white relative z-2">
                 <h2 class="!leading-tight hover:text-secondary-100 hover:underline">
                     {{ $recentPost->title }}
                 </h2>
@@ -18,10 +18,10 @@
                 @foreach($posts as $post)
                 <div class="flex items-center space-x-6">
                     <div>
-                        <a href="#" class="inline-block w-24 h-24 bg-gray-100 rounded-md article-thumb" style="background-image: url({{ asset('posts/' . $post->cover) }})"></a>
+                        <a href="{{ route('post', $post->slug) }}" class="inline-block w-24 h-24 bg-gray-100 rounded-md article-thumb" style="background-image: url({{ asset('posts/' . $post->cover) }})"></a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a href="{{ route('post', $post->slug) }}" class="hover:text-secondary-100 hover:underline">
                             <h4 class="!mb-2">
                                 {{ $post->title }}
                             </h4>

@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             PageSeeder::class,
             PostSeeder::class,
             SuscriberSeeder::class,
+            EventSeeder::class,
         ]);
     }
 }

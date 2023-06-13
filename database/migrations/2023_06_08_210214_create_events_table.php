@@ -21,8 +21,9 @@ return new class extends Migration
             $table->timestamp('end_time')->nullable();
             $table->string('location')->nullable();
             $table->string('address')->nullable();
-            $table->string('flyer');
+            $table->string('flyer')->nullable();
             $table->string('slug')->unique();
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }

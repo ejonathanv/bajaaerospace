@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use Illuminate\Support\Str;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
-use App\Models\Event;
 
 class EventController extends Controller
 {
@@ -13,7 +14,10 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        
+        $events = Event::latest()->paginate(5);
+        return view('admin.events.index', compact('events'));
+
     }
 
     /**
@@ -21,7 +25,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.events.create');
     }
 
     /**
@@ -29,7 +33,34 @@ class EventController extends Controller
      */
     public function store(StoreEventRequest $request)
     {
-        //
+        $event = new Event();
+        $event->title = $request->title;
+        $event->description = $request->description;
+        $event->start_date = $request->start_date;
+        $event->end_date = $request->end_date;
+        $event->start_time = $request->start_time;
+        $event->end_time = $request->end_time;
+        $event->location = $request->location;
+        $event->address = $request->address;
+        $event->slug = Str::slug($request->title);
+        $event->published = $request->published ? true : false;
+        
+        $event->save();
+
+        if ($request->hasFile('flyer')) {
+            $this->uploadFlyer($request, $event);
+        }
+
+        return redirect()->route('events.show', $event)->with('success', 'Event created successfully!');
+
+    }
+
+    public function uploadFlyer($request, $event){
+        $file = $request->file('flyer');
+        $fileName = hexdec(uniqid()) . '.' . $file->getClientOriginalExtension();
+        $file->move('events', $fileName);
+        $event->flyer = $fileName;
+        $event->save();
     }
 
     /**
@@ -37,7 +68,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        return view('admin.events.show', compact('event'));
     }
 
     /**
@@ -53,7 +84,24 @@ class EventController extends Controller
      */
     public function update(UpdateEventRequest $request, Event $event)
     {
-        //
+        $event->title = $request->title;
+        $event->description = $request->description;
+        $event->start_date = $request->start_date;
+        $event->end_date = $request->end_date;
+        $event->start_time = $request->start_time;
+        $event->end_time = $request->end_time;
+        $event->location = $request->location;
+        $event->address = $request->address;
+        $event->slug = Str::slug($request->title);
+        $event->published = $request->published ? true : false;
+
+        $event->save();
+
+        if ($request->hasFile('flyer')) {
+            $this->uploadFlyer($request, $event);
+        }
+
+        return redirect()->route('events.show', $event)->with('success', 'Event updated successfully!');
     }
 
     /**
@@ -61,6 +109,7 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+        return redirect()->route('events.index')->with('success', 'Event deleted successfully!');
     }
 }

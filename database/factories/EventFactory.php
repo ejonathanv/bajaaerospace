@@ -27,6 +27,7 @@ class EventFactory extends Factory
             'address' => $this->faker->address(),
             'flyer' => 'default.jpg',
             'slug' => $this->faker->slug(),
+            'published' => $this->faker->boolean(),
         ];
     }
 }

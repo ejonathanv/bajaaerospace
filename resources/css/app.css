@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body, html{
     @apply bg-primary-900;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container{
@@ -109,7 +115,7 @@ p{
 }
 
 .form-control[type="text"][placeholder]{
-    @apply block w-full rounded-lg bg-white bg-opacity-25 border-0 px-4 py-3 placeholder-white;
+    @apply block w-full rounded-lg bg-white bg-opacity-25 border-0 px-4 py-3 placeholder-white text-white;
 }
 
 .btn{

@@ -15,6 +15,7 @@ Route::get('blog', [WebsiteController::class, 'blog'])->name('blog');
 Route::get('blog/{post:slug}', [WebsiteController::class, 'post'])->name('post');
 Route::get('events-and-webinars', [WebsiteController::class, 'events'])->name('events');
 Route::get('events-and-webinars/{event:slug}', [WebsiteController::class, 'event'])->name('event');
+Route::get('events-and-webinars/{event:slug}/register', [WebsiteController::class, 'eventRegister'])->name('event.register');
 Route::get('contact', [WebsiteController::class, 'contact'])->name('contact');
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], function() {
@@ -22,6 +23,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], fu
     Route::resource('posts', PostController::class);
     Route::resource('pages', PageController::class);
     Route::resource('events', EventController::class);
+    Route::resource('subscribers', \App\Http\Controllers\SuscriberController::class);
 });
 
 Route::middleware('auth')->group(function () {

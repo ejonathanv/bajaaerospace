@@ -1,20 +1,17 @@
 <div class="container pt-10">
-    <div class="flex items-center space-x-16">
-        <div class="w-7/12">
+    <div class="flex flex-col md:flex-row items-center space-y-7 md:space-y-0 md:space-x-16">
+        <div class="w-full md:w-7/12">
             <h1 class="text-white uppercase">
                 An internationally recognized entity supporting and servicing the aerospace industry.
             </h1>
-            <p class="text-white">
+            <p class="text-white md:mb-7">
                 Baja California, a state with global talent in the aerospace sector, expertise in aeronautics and space, accredited SMEs supply chain value and over five decades seniority in word-class management.
             </p>
-            <a href="#" class="link text-secondary-100">
-                Read more
-            </a>
         </div>
-        <div class="w-5/12">
+        <div class="w-full md:w-5/12">
             <div class="cover-form">
-                <h2 class="text-white text-center">Become a member</h2>
-                <p class="text-white !text-sm font-bold opacity-75 !mb-10 text-center">
+                <h3 class="text-white">Become a member</h3>
+                <p class="text-white !text-sm font-bold opacity-75 !mb-7">
                     We are a dynamic and energized group of passionate aerospace enthusiasts with a well established network in the aerospace industry worldwide.
                 </p>
                 <form action="">
@@ -33,7 +30,7 @@
                             I agree to the <a href="#" class="link">terms and conditions</a>
                         </label>
                     </div>
-                    <button class="btn btn-secondary">
+                    <button class="btn btn-secondary w-full text-center">
                         Send request
                     </button>
                 </form>

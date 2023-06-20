@@ -12,6 +12,8 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
+        <script src="https://kit.fontawesome.com/133291f590.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>

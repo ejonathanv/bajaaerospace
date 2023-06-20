@@ -6,26 +6,33 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-ClassicEditor
-.create( document.querySelector( '#editor' ), {
-    toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
-})
-.then( editor => {
-    editor.model.document.on( 'change:data', () => {
-        let input = document.querySelector( '#postContent' );
-        input.value = editor.getData();
-    });
-})
-.catch( error => {
-    console.error( error );
-} );
+let editorBox = document.querySelector( '#editor' );
+
+if( editorBox ) {
+    ClassicEditor
+    .create( document.querySelector( '#editor' ), {
+        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+    })
+    .then( editor => {
+        editor.model.document.on( 'change:data', () => {
+            let input = document.querySelector( '#postContent' );
+            input.value = editor.getData();
+        });
+    })
+    .catch( error => {
+        console.error( error );
+    } );
+}
+    
 
 const { createApp } = Vue
 
 createApp({
+    
     data() {
         return {
             headerFixed: false,
+            mobileMenu: false
         }
     },
     mounted() {
@@ -41,6 +48,16 @@ createApp({
                 }
             }
             );
+        },
+        toggleMobileMenu() {
+            this.mobileMenu = !this.mobileMenu;
+
+            if (this.mobileMenu) {
+                document.body.style.overflow = 'hidden';
+                window.scrollTo(0, 0);
+            }else{
+                document.body.style.overflow = 'auto';
+            }
         }
     }
 }).mount('#app')

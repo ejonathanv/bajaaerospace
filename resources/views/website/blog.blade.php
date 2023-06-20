@@ -1,23 +1,34 @@
-<x-page-layout title="Blog">
-    <section class="py-16">
+<x-page-layout title="Welcome to the blog" subtitle="Here you will find all the most interesting news about our organization and more">
+    <section class="py-16 bg-gray-100">
         <div class="container">
-            <div class="flex flex-wrap">
+            <div class="flex flex-wrap items-stretch -mx-3">
                 @foreach($posts as $post)
                 <div class="w-1/3 p-3 mb-6">
-                    <a href="{{ route('post', $post->slug) }}">
-                    <img src="{{ asset('posts/' . $post->cover) }}" alt="Post" class="w-full h-64 object-cover rounded shadow mb-3">
-                    <p>
-                        {{ \Carbon\Carbon::parse($post->created_at)->format('d/m/Y') }}
-                    </p>
-                    <h2 class="!mb-3">
-                        {{ $post->title }}
-                    </h2>
-                    <p>
-                        {{ Str::limit($post->subtitle, 100) }}
-                    </p>
-                    </a>
+                    <div class="bg-white rounded shadow h-full overflow-hidden">
+                        <a href="{{ route('post', $post->slug) }}">
+                            <img src="{{ asset('posts/' . $post->cover) }}" alt="Post" class="w-full h-64 object-cover mb-3">
+                        </a>
+                        <div class="p-5">
+                            <p>
+                                {{ \Carbon\Carbon::parse($post->created_at)->format('d/m/Y') }}
+                            </p>
+                            <a href="{{ route('post', $post->slug) }}" class="hover:underline">
+                                <h4 class="!mb-3">
+                                    {{ $post->title }}
+                                </h4>
+                            </a>
+                            <p>
+                                {{ Str::limit($post->subtitle, 100) }}
+                            </p>
+                        </div>
+                        </a>
+                    </div>
                 </div>
                 @endforeach
+            </div>
+
+            <div class="mt-10">
+                {{ $posts->links() }}
             </div>
         </div>
     </section>

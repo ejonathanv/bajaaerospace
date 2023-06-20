@@ -13,7 +13,8 @@ class SuscriberController extends Controller
      */
     public function index()
     {
-        //
+        $subscribers = Suscriber::latest()->paginate(30);
+        return view('admin.subscribers.index', compact('subscribers'));
     }
 
     /**

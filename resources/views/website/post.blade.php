@@ -7,6 +7,14 @@
                 <h1 class="!mb-6 mt-10">
                     {{ $post->title }}
                 </h1>
+
+                <p>
+                    <span class="text-gray-900">
+                        Published at:
+                    </span>
+                    {{ \Carbon\Carbon::parse($post->created_at)->format('d/m/Y') }}
+                </p>
+
                 <h4 class="mb-7">
                     {{ $post->subtitle }}
                 </h4>

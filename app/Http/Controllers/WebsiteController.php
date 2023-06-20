@@ -19,13 +19,21 @@ class WebsiteController extends Controller
     }
 
     public function blog(){
-        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(9);
         return view('website.blog', compact('posts'));
     }
 
     public function events(){
         $events = Event::orderBy('created_at', 'desc')->paginate(10);
         return view('website.events', compact('events'));
+    }
+
+    public function event(Event $event){
+        return view('website.event', compact('event'));
+    }
+
+    public function eventRegister(Event $event){
+        return view('website.event-register', compact('event')); 
     }
 
     public function post(Post $post){

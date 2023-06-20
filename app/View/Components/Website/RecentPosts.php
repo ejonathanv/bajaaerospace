@@ -30,15 +30,19 @@ class RecentPosts extends Component
         return view('components.website.recent-posts');
     }
 
-    public function getPosts()
-    {
-        $posts = Post::orderBy('created_at', 'desc')->take(5)->get();
-        return $posts;
-    }
-
     public function getRecentPost()
     {
         $recentPost = Post::orderBy('created_at', 'desc')->first();
         return $recentPost;
+    }
+
+    public function getPosts()
+    { 
+        $recentPost = $this->getRecentPost();  
+        $posts = Post::where('id', '!=', $recentPost->id)
+            ->orderBy('created_at', 'desc')
+            ->take(4)
+            ->get();
+        return $posts;
     }
 }

@@ -48,7 +48,7 @@
         <div class="flex items-start space-x-6 mt-4">
             <div class="flex-1">
                 <x-input-label for="start_date" :value="__('Start date')" />
-                <x-text-input id="start_date" class="block mt-1 w-full" type="date" name="start_date" :value="$event ? $event->start_date : old('start_date')" required autocomplete="start_date" />
+                <x-text-input id="start_date" class="block mt-1 w-full" type="date" name="start_date" :value="$event ? $event->start_date : old('start_date')" required autocomplete="start_date" pattern="[0-9]{2}:[0-9]{2}" placeholder="HH:MM" />
                 <x-input-error :messages="$errors->get('start_date')" class="mt-2" />
             </div>
             <div class="flex-1">

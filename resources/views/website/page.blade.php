@@ -10,18 +10,15 @@
                     <h4 class="mb-10">
                         {{ $page->subtitle }}
                     </h4>
+                    @if($page->cover)
                     <img src="{{ asset('pages/'.$page->cover) }}" alt="{{ $page->title }}" class="w-full h-auto rounded shadow mb-9">
+                    @endif
                     <div>
                         {!! $page->content !!}
                     </div>
                 </div>
                 <div class="w-3/12">
-                    <h3>
-                        Recent Posts
-                    </h3>
-
-                    <hr class="my-5">
-
+                    <x-website.recent-posts-list></x-website.recent-posts-list>
                 </div>
             </div>
         </div>

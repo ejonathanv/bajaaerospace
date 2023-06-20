@@ -1,8 +1,8 @@
-<li class="flex items-start space-x-3">
+<li class="flex items-start space-x-5">
     <div>
         <img src="{{ asset('events/' . $event->flyer) }}" alt="" class="w-20 h-20 object-cover rounded">
     </div>
-    <div>
+    <div class="flex-1">
         <h4 class="!mb-0">
             {{ $event->title }}
         </h4>

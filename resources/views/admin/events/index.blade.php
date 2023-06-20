@@ -30,6 +30,7 @@
 
                     <hr class="my-5">
 
+                    @if(count($events))
                     <ul class="flex flex-col space-y-7">
                         @foreach($events as $event)
                             <x-admin.event-list-item :event="$event"></x-admin.event-list-item>
@@ -39,6 +40,11 @@
                     <div class="mt-5">
                         {{ $events->links() }}
                     </div>
+                    @else
+                        <p class="text-sm !m-0">
+                            There are no events yet.
+                        </p>
+                    @endif
                 </div>
             </div>
         </div>

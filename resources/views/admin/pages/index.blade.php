@@ -30,6 +30,7 @@
 
                     <hr class="my-5">
 
+                    @if(count($pages))
                     <ul class="flex flex-col space-y-7">
                         @foreach($pages as $page)
                             <x-admin.page-list-item :page="$page"></x-admin.page-list-item>
@@ -39,6 +40,11 @@
                     <div class="mt-5">
                         {{ $pages->links() }}
                     </div>
+                    @else
+                        <p class="text-sm !m-0">
+                            There are no pages yet.
+                        </p>
+                    @endif
                 </div>
             </div>
         </div>

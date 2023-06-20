@@ -23,33 +23,39 @@
                         </div>
                     </div>
                     <hr class="my-5">
-                    @foreach($subscribers as $subscriber)
-                    <div class="flex items-center justify-between w-full">
-                        <div>
-                            <p class="!m-0 font-bold text-lg">
-                                {{ $subscriber->name }}
-                            </p>
-                            <p class="text-gray-500 !m-0">
-                                {{ $subscriber->email }}}
-                            </p>
-                            @if($subscriber->phone)
-                            <p class="text-gray-500 !m-0">
-                                {{ $subscriber->phone }}
-                            </p>
-                            @endif
+                    @if(count($subscribers))
+                        @foreach($subscribers as $subscriber)
+                        <div class="flex items-center justify-between w-full">
+                            <div>
+                                <p class="!m-0 font-bold text-lg">
+                                    {{ $subscriber->name }}
+                                </p>
+                                <p class="text-gray-500 !m-0">
+                                    {{ $subscriber->email }}}
+                                </p>
+                                @if($subscriber->phone)
+                                <p class="text-gray-500 !m-0">
+                                    {{ $subscriber->phone }}
+                                </p>
+                                @endif
+                            </div>
+                            <div>
+                                <form action="{{ route('subscribers.destroy', $subscriber->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger">
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
                         </div>
-                        <div>
-                            <form action="{{ route('subscribers.destroy', $subscriber->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger">
-                                    Delete
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <hr class="my-5">
-                    @endforeach
+                        <hr class="my-5">
+                        @endforeach
+                    @else
+                        <p class="text-sm !m-0">
+                            There are no subscribers yet.
+                        </p>
+                    @endif
                 </div>
             </div>
         </div>

@@ -31,14 +31,8 @@
         @endforeach
         </div>
     @else
-        <p class="mt-5">
+        <p class="mt-5 text-sm !m-0">
             There are no suscribers yet.
         </p>
     @endif
-
-    <div class="mt-7">
-        <a href="#" class="text-logo-blue underline">
-            Manage suscribers
-        </a>
-    </div>
 </div>

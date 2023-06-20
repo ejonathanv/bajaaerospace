@@ -39,6 +39,7 @@ class RecentPosts extends Component
     public function getPosts()
     { 
         $recentPost = $this->getRecentPost();  
+        if(!$recentPost) return null;
         $posts = Post::where('id', '!=', $recentPost->id)
             ->orderBy('created_at', 'desc')
             ->take(4)

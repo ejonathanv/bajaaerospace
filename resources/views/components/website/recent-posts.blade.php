@@ -1,3 +1,4 @@
+@if($recentPost)
 <section class="py-10 md:py-16 bg-gray-100">
     <div class="flex flex-col md:flex-row items-stretch space-y-7 md:space-y-0 px-6 md:px-0">
         <div class="w-full md:w-1/2 flex flex-col items-start p-5 md:p-10 bg-gray-100 rounded md:rounded-r-xl img-gradient-overlay shadow-md" style="background-image:url({{ asset('posts/' . $recentPost->cover) }})">
@@ -39,3 +40,4 @@
         </div>
     </div>
 </section>
+@endif

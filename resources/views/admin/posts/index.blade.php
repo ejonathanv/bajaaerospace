@@ -30,6 +30,7 @@
 
                     <hr class="my-5">
 
+                    @if(count($posts))
                     <ul class="flex flex-col space-y-7">
                         @foreach($posts as $post)
                             <x-admin.post-list-item :post="$post"></x-admin.post-list-item>
@@ -39,6 +40,11 @@
                     <div class="mt-5">
                         {{ $posts->links() }}
                     </div>
+                    @else
+                        <p class="text-sm !m-0">
+                            There are no posts yet.
+                        </p>
+                    @endif
                 </div>
             </div>
         </div>

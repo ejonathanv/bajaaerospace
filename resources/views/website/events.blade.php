@@ -7,7 +7,7 @@
                 @foreach($events as $event)
                 <div class="bg-white rounded mb-7 shadow flex items-start justify-between space-x-5 p-5">
                     <div class="w-4/12">
-                        <img src="{{ asset('flyers/' . $event->flyer) }}" alt="Event" class="rounded shadow h-48 w-full object-cover">
+                        <img src="{{ asset('events/' . $event->flyer) }}" alt="Event" class="rounded shadow h-48 w-full object-cover">
                     </div>
                     <div class="w-8/12">
                         <h2 class="text-2xl font-bold">

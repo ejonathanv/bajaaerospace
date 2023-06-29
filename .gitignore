@@ -5,6 +5,7 @@
 /public/storage
 /public/posts
 /public/pages
+/public/events
 /storage/*.key
 /vendor
 .env

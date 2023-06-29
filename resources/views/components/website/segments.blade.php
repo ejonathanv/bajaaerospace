@@ -1,5 +1,5 @@
 <section class="bg-white pb-10 md:pb-16">
-    <div class="container flex flex-col md:flex-row space-y-5 md:space-y-0 items-stretch flex-wrap justify-center">
+    <div class="container flex flex-col md:flex-row items-stretch flex-wrap justify-center">
         <div class="w-full md:w-1/4 px-2 mb-6">
             <div class="bg-white shadow rounded overflow-hidden h-full">
                 <img src="{{ asset('img/segments/commercial.jpg') }}" alt="" class="w-full h-auto object-cover">

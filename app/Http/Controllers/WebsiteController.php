@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use App\Models\Post;
 use App\Models\Event;
+use App\Models\Webinar;
 use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
@@ -30,6 +31,22 @@ class WebsiteController extends Controller
 
     public function event(Event $event){
         return view('website.event', compact('event'));
+    }
+
+    public function webinars(){
+        $webinar = Webinar::where('published', true)->latest()->first();
+        $last_webinar = Webinar::where('published', true)->latest()->skip(1)->first();
+        return view('website.webinars', compact('webinar', 'last_webinar')); 
+    }
+
+    public function webinarRegister(){
+        $webinar = Webinar::where('published', true)->latest()->first();
+        return view('website.webinar-register', compact('webinar'));
+    }
+
+    public function webinarSuccessRegister(){
+        $webinar = Webinar::where('published', true)->latest()->first();
+        return view('website.webinar-register-thanks', compact('webinar'));
     }
 
     public function eventRegister(Event $event){

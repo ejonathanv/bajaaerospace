@@ -37,10 +37,10 @@ class EventController extends Controller
         $event = new Event();
         $event->title = $request->title;
         $event->description = $request->description;
-        $event->start_date = Carbon::parse($request->start_date)->format('Y-m-d');
-        $event->end_date = Carbon::parse($request->end_date)->format('Y-m-d');
-        $event->start_time = Carbon::parse($request->start_time)->format('H:i');
-        $event->end_time = Carbon::parse($request->end_time)->format('H:i');
+        $event->start_date = Carbon::parse($request->start_date);
+        $event->end_date = Carbon::parse($request->end_date);
+        $event->start_time = Carbon::parse($request->start_time);
+        $event->end_time = Carbon::parse($request->end_time);
         $event->location = $request->location;
         $event->address = $request->address;
         $event->slug = Str::slug($request->title);
@@ -87,10 +87,10 @@ class EventController extends Controller
     {
         $event->title = $request->title;
         $event->description = $request->description;
-        $event->start_date = Carbon::parse($request->start_date)->format('Y-m-d');
-        $event->end_date = Carbon::parse($request->end_date)->format('Y-m-d');
-        $event->start_time = Carbon::parse($request->start_time)->format('H:i');
-        $event->end_time = Carbon::parse($request->end_time)->format('H:i');
+        $event->start_date = Carbon::parse($request->start_date);
+        $event->end_date = Carbon::parse($request->end_date);
+        $event->start_time = Carbon::parse($request->start_time);
+        $event->end_time = Carbon::parse($request->end_time);
         $event->location = $request->location;
         $event->address = $request->address;
         $event->slug = Str::slug($request->title);

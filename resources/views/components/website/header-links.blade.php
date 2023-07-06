@@ -12,6 +12,7 @@
                 </a>
                 @endforeach
                 <a href="{{ route('events') }}">Events</a>
+                <a href="{{ route('webinars') }}">Webinars</a>
                 <a href="{{ route('blog') }}">Blog</a>
                 <a href="{{ route('contact') }}">Contact us</a>
             </nav>
@@ -43,6 +44,7 @@
             </a>
             @endforeach
             <a href="{{ route('events') }}">Events</a>
+            <a href="{{ route('webinars') }}">Webinars</a>
             <a href="{{ route('blog') }}">Blog</a>
             <a href="{{ route('contact') }}">Contact us</a>
         </nav>

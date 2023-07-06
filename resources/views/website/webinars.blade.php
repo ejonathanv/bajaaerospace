@@ -4,6 +4,7 @@
             <!-- IMAGEN FIJA -->
             <img src="{{ asset('webinars/webinar_cover.jpeg') }}" alt="" class="w-full h-auto">
 
+            @if($webinar)
             <!-- IMAGEN DINAMICA POR WEBINAR -->
             <div class="webinar-info flex flex-col md:flex-row items-center space-y-7 md:space-y-0 md:space-x-7 mt-7 md:mt-16">
                 <div class="basis-full md:basis-9/12">
@@ -17,6 +18,16 @@
                     </a>
                 </div>
             </div>
+            @else
+            <div class="mt-16">
+                <h2 class="text-2xl font-bold">
+                    Our next webinar
+                </h2>
+                <p class="text-gray-500 text-sm">
+                    We don't have any webinar scheduled yet.
+                </p>
+            </div>
+            @endif
 
             @if($last_webinar)
                 @if($last_webinar->video)

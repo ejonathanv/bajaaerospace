@@ -58,7 +58,7 @@ class WebinarRegisterController extends Controller
     }
 
     public function notify_admin($register){
-        Mail::to(env('MAIL_FROM_ADDRESS'))->send(new NewWebinarRegister($register));
+        Mail::to(env('MAIL_TO_ADDRESS'))->send(new NewWebinarRegister($register));
     }
 
     /**

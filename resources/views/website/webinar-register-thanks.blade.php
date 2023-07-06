@@ -16,6 +16,14 @@
                         We will send you an email with the details of the webinar. Hope to see you there!
                     </p>
 
+                    <p class="text-center mt-5 text-sm text-yellow-700">
+                        (Note: If you don´t see the email in your inbox, please check your spam folder.)
+                    </p>
+
+                    <a href="{{ route('home') }}" class="btn btn-primary w-full text-center mt-10">
+                        Back to home
+                    </a>
+
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('cover')->nullable();
             $table->boolean('published')->default(false);
             $table->string('template')->default('default');
-            $table->string('category')->nullable();
+            $table->string('category')->nullable(); // Post = Blog, News = News
             $table->string('tags')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();

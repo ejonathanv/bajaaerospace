@@ -24,6 +24,7 @@ class UpdatePostRequest extends FormRequest
         return [
             'title' => 'required|string|max:255|unique:posts,title,' . $this->post->id,
             'subtitle' => 'nullable|string|max:255',
+            'category_id' => 'required|in:posts,news',
             'content' => 'required|string',
             'cover' => 'nullable|image|max:5000|mimes:jpg,jpeg,png',
         ];

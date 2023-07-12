@@ -52,6 +52,17 @@
             </div>
             <x-input-error :messages="$errors->get('content')" class="mt-2" />
         </div>
+        <div class="mt-4 flex items-center space-x-3">
+            <label>
+                <input type="radio" name="category_id" value="posts" {{ $post ? $post->category === 'posts' ? 'checked' : '' : '' }}>
+                Posts
+            </label>
+            <label>
+                <input type="radio" name="category_id" value="news" {{ $post ? $post->category === 'news' ? 'checked' : '' : '' }}>
+                News Aero
+            </label>
+            <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
+        </div>
 
         <div class="mt-4 mb-10">
             <label>

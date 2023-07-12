@@ -20,8 +20,13 @@ class WebsiteController extends Controller
     }
 
     public function blog(){
-        $posts = Post::orderBy('created_at', 'desc')->paginate(9);
+        $posts = Post::orderBy('created_at', 'desc')->where('category', 'posts')->paginate(9);
         return view('website.blog', compact('posts'));
+    }
+
+    public function news(){
+        $posts = Post::where('category', 'news')->orderBy('created_at', 'desc')->paginate(9);
+        return view('website.news', compact('posts'));
     }
 
     public function events(){
@@ -57,6 +62,12 @@ class WebsiteController extends Controller
         $title = $post->title;
         $subtitle = $post->subtitle;
         return view('website.post', compact('post', 'title', 'subtitle'));
+    }
+
+    public function new(Post $post){
+        $title = $post->title;
+        $subtitle = $post->subtitle;
+        return view('website.new', compact('post', 'title', 'subtitle'));
     }
 
     public function contact(){

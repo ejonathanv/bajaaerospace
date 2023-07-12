@@ -9,6 +9,9 @@
         <p class="!mb-0">
             {{ $post->created_at->format('M d, Y') }}
         </p>
+        <p class="text-sm font-bold !mb-0">
+            Category: {{ $post->category_name }}
+        </p>
         <a href="{{ route('posts.show', $post) }}" class="text-logo-blue underline">
             View details
         </a>

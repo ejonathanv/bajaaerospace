@@ -36,6 +36,7 @@ class PostController extends Controller
         $post->slug = Str::slug($request->title);
         $post->subtitle = $request->subtitle;
         $post->content = $request->content;
+        $post->category = $request->category_id;
         $post->published = $request->has('published') ? true : false;
 
         $post->save();
@@ -72,6 +73,7 @@ class PostController extends Controller
         $post->slug = Str::slug($request->title);
         $post->subtitle = $request->subtitle;
         $post->content = $request->content;
+        $post->category = $request->category_id;
         $post->published = $request->has('published') ? true : false;
 
         $post->save();

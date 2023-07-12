@@ -1,4 +1,4 @@
-<x-page-layout title="Welcome to the blog" subtitle="Here you will find global news about space insdustry">
+<x-page-layout title="News Aero" subtitle="Here you will find all the most interesting news about our organization and more">
     <section class="py-16 bg-gray-100">
         <div class="container">
             <div class="flex flex-wrap items-stretch -mx-3">

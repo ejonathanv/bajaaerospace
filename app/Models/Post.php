@@ -10,4 +10,18 @@ class Post extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function getCategoryNameAttribute(){
+        switch ($this->category) {
+            case 'posts':
+                return 'Post';
+                break;
+            case 'news':
+                return 'News Aero';
+                break;
+            default :
+                return 'N/A';
+                break;
+        }
+    }
 }

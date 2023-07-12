@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Webinar;
 use Illuminate\Support\Str;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\WebinarRegistersExport;
 use App\Http\Requests\StoreWebinarRequest;
 use App\Http\Requests\UpdateWebinarRequest;
 
@@ -102,5 +104,10 @@ class WebinarController extends Controller
     public function destroy(Webinar $webinar)
     {
         //
+    }
+
+    public function download(Webinar $webinar){
+        $fileName = Str::slug($webinar->title) . '-registros.xlsx';
+        return Excel::download(new WebinarRegistersExport, $fileName);
     }
 }

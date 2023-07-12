@@ -128,6 +128,15 @@
                             </li>
                         @endforeach
                     </ul>
+
+                    <hr class="my-5">
+
+                    <form action="{{ route('download', $webinar) }}" method="POST">
+                        @csrf
+                        <button class="btn btn-primary">
+                            Download CSV
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

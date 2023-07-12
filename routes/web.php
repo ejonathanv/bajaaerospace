@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], fu
     Route::resource('events', EventController::class);
     Route::resource('subscribers', SuscriberController::class);
     Route::resource('webinars', WebinarController::class);
+    Route::post('webinar/{webinar}/download-registers', [WebinarController::class, 'download'])->name('download');
 });
 
 Route::middleware('auth')->group(function () {

@@ -6,6 +6,7 @@
 /public/posts
 /public/pages
 /public/events
+/public/webinars
 /storage/*.key
 /vendor
 .env

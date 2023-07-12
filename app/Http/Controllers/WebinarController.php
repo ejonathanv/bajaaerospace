@@ -108,6 +108,6 @@ class WebinarController extends Controller
 
     public function download(Webinar $webinar){
         $fileName = Str::slug($webinar->title) . '-registros.xlsx';
-        return Excel::download(new WebinarRegistersExport, $fileName);
+        return Excel::download(new WebinarRegistersExport($webinar->id), $fileName);
     }
 }

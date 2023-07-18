@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="w-full md:w-8/12">
-            @if($events)
+            @if($event)
             <div class="eventSlider">
                 <div class="flex flex-col w-full md:w-7/12">
                     <p class="font-bold text-white text-sm !mb-3">

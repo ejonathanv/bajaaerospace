@@ -19,6 +19,7 @@
             </div>
         </div>
         <div class="w-full md:w-8/12">
+            @if($events)
             <div class="eventSlider">
                 <div class="flex flex-col w-full md:w-7/12">
                     <p class="font-bold text-white text-sm !mb-3">
@@ -46,6 +47,7 @@
                     <img src="{{ asset('events/' . $event->flyer) }}" alt="{{ $event->title }}" class="w-full h-auto shadow rounded">
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </section>

@@ -29,6 +29,6 @@ class Events extends Component
 
     public function get_recent_event()
     {
-        return \App\Models\Event::orderBy('start_date', 'desc')->first();
+        return \App\Models\Event::orderBy('start_date', 'desc')->latest()->first();
     }
 }

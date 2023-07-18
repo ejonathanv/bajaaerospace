@@ -25,25 +25,25 @@
                         Next event
                     </p>
                     <h2 class="text-white !mb-6">
-                        This is the title of the event and will be displayed here
+                        {{ $event->title }}
                     </h2>
                     <p class="text-white !md:mb-16">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi architecto aliquid voluptas ad ex, modi quos magnam dolor.
+                        {{ $event->description }}
                     </p>
                     <div class="mt-auto">
                         <h3 class="text-white">
-                            30 Junio 2023
+                            {{ \Carbon\Carbon::parse($event->start_date)->format('d/m/Y') }}
                         </h3>
                         <p class="text-white text-sm font-bold">
-                            10:00 AM | Hotel Lucerna, Tijuana, Baja California, México
+                            {{ \Carbon\Carbon::parse($event->start_time)->format('h:i a') }} | {{ $event->location }}
                         </p>
-                        <a href="#" class="text-yellow-300 font-bold hover:underline">
+                        <a href="{{ route('event', $event) }}" class="text-yellow-300 font-bold hover:underline">
                             View event
                         </a>
                     </div>
                 </div>
                 <div class="w-full md:w-5/12">
-                    <img src="{{ asset('img/pexels-werner-pfennig-6950033.jpg') }}" alt="Event" class="w-full h-auto shadow rounded">
+                    <img src="{{ asset('events/' . $event->flyer) }}" alt="{{ $event->title }}" class="w-full h-auto shadow rounded">
                 </div>
             </div>
         </div>

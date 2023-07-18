@@ -13,7 +13,7 @@
             </h1>
             <hr class="border-2 border-yellow-300 w-20">
             <div>
-                <a href="#" class="btn btn-secondary">
+                <a href="{{ route('events') }}" class="btn btn-secondary">
                     View all events
                 </a>
             </div>

@@ -36,7 +36,7 @@
                             {{ \Carbon\Carbon::parse($event->start_date)->format('d/m/Y') }}
                         </h3>
                         <p class="text-white text-sm font-bold">
-                            {{ \Carbon\Carbon::parse($event->start_time)->format('h:i a') }} | {{ $event->location }}
+                            {{ $event->location }}
                         </p>
                         <a href="{{ route('event', $event) }}" class="text-yellow-300 font-bold hover:underline">
                             View event

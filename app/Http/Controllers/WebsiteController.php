@@ -19,6 +19,10 @@ class WebsiteController extends Controller
         return view('website.page', compact('page'));
     }
 
+    public function about(){
+        return view('website.about');
+    }
+
     public function blog(){
         $posts = Post::orderBy('created_at', 'desc')->where('category', 'posts')->paginate(9);
         return view('website.blog', compact('posts'));

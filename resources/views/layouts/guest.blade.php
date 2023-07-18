@@ -16,6 +16,18 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ5HSGBYCG"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-LQ5HSGBYCG');
+        </script>
+
     </head>
     <body class="font-sans text-gray-900 antialiased" id="app">
         <x-website.header></x-website.header>

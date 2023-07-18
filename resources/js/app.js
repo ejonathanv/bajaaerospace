@@ -32,7 +32,8 @@ createApp({
     data() {
         return {
             headerFixed: false,
-            mobileMenu: false
+            mobileMenu: false,
+            section: null
         }
     },
     mounted() {
@@ -58,6 +59,12 @@ createApp({
             }else{
                 document.body.style.overflow = 'auto';
             }
+        },
+        toggleSection(id){
+            this.section = id == this.section ? null : id;
+
+            let sectionRef = this.$refs['section'+id];
+            window.scrollTo(0, sectionRef.offsetTop - 100);
         }
     }
 }).mount('#app')

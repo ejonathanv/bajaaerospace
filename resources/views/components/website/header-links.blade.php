@@ -6,7 +6,7 @@
             </a>
             <nav class="hidden md:flex nav">
                 <a href="{{ route('home') }}">Home</a>
-                {{--<a href="{{ route('about') }}">About us</a>--}}
+                <a href="{{ route('about') }}">About us</a>
                 @foreach($pages as $page)
                 <a href="{{ route('page', $page->slug) }}">
                     {{ $page->name_on_navbar }}

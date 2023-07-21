@@ -230,7 +230,10 @@
                             </div>
                         </p>
                         <p class="text-sm leading-relaxed">
-                            Tomas Sibaja is the President of the Baja California Aerospace Cluster. He is also the CEO of the company Sibaja Group, a company that provides consulting services in the aerospace industry. He has more than 20 years of experience in the aerospace industry, having worked for companies such as Honeywell, Parker Aerospace, and Zodiac Aerospace. He has a bachelor's degree in Industrial Engineering from the Autonomous University of Baja California (UABC) and a master's degree in Business Administration from the University of California, San Diego (UCSD).
+                            He is Director and Co-Founder of the firm Grupo Aeroespacial Especializado (GAE), Director of the company Space Propulsion Technologies (TECPROESA)
+                        </p>
+                        <p class="text-sm leading-relaxed">
+                            He has a PhD in Economics from the International School of ISM Administration in Paris, France. An MBA from the University of Redlands, in California, a Postgraduate in Economics and Political Studies from the University of Cambridge, England.
                         </p>
 
                         <div class="flex items-center space-x-2">

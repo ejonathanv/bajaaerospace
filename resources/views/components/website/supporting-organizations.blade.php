@@ -1,7 +1,7 @@
 <section class="bg-white py-16">
     <div class="container">
         <h2 class="text-center mb-7">
-            Supporting Organizations
+            Goverment and Supporting Organizations
         </h2>
         <div class="flex items-center flex-wrap justify-center">
             <div class="w-4/12 md:w-2/12 px-2">

@@ -237,11 +237,11 @@
                         </p>
 
                         <div class="flex items-center space-x-2">
-                            <a href="{{ asset('pdf/biography.pdf') }}" class="btn btn-primary" target="_blank">
+                            <a href="{{ asset('pdf/biography.pdf') }}" class="btn btn-primary btn-lg" target="_blank">
                                 Biography
                             </a>
 
-                            <a href="#" class="btn btn-secondary">
+                            <a href="#" class="btn btn-secondary btn-lg">
                                 Presentation
                             </a>
                         </div>
@@ -250,5 +250,43 @@
             </div>
         </div>
     </section>
+
+    <!-- Meet expert advisory board -->
+    <section class="flex items-stretch">
+        <div class="w-1/2 py-48 px-16">
+            <h1 class="text-4xl font-bold mb-10 text-center">
+                Meet <span class="text-primary-100">our expert</span> <br> advisory board
+            </h1>
+
+            <div class="flex items-center justify-center">
+                <a href="{{ asset('pdf/consejo-directivo.pdf') }}" class="btn btn-primary btn-lg" target="_blank">
+                    Board of Directors
+                </a>
+            </div>
+        </div>
+        <div class="w-1/2 bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('img/about/directors.jpg') }})">
+
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="flex items-stretch">
+        <div class="w-1/2 bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('img/about/benefits.jpg') }})">
+
+        </div>
+        <div class="w-1/2 py-48 px-16">
+            <h1 class="text-4xl font-bold mb-7 text-center">
+                Do you know the benefits of belonging to our cluster?
+            </h1>
+
+            <div class="flex items-center justify-center">
+                <a href="{{ asset('pdf/beneficios.pdf') }}" class="btn btn-primary btn-lg" target="_blank">
+                    Benefits
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <x-website.supporting-organizations></x-website.supporting-organizations>
 
 </x-page-layout>

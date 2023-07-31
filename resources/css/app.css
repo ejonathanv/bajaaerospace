@@ -146,6 +146,11 @@ p{
 .btn{
     @apply rounded-lg font-bold py-3;
 }
+
+.btn.btn-lg{
+    @apply px-8 text-lg py-4;
+}
+
 .btn-secondary{
     @apply bg-secondary-100 text-primary-900;
 }

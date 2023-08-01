@@ -1,11 +1,10 @@
 <x-page-layout title="About Baja Aerospace Cluster" subtitle="We are a collaborative ecosystem that drives innovation, fosters synergy among companies, and promotes the development of advanced technologies and solutions in the aerospace industry">
 
 
-    <section class="flex items-stretch">
-        <div class="w-1/2 bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('img/about/mission-baja-aerospace.jpg') }})">
-
+    <section class="flex flex-col md:flex-row items-center md:items-stretch">
+        <div class="w-full md:w-1/2 bg-img-section bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('img/about/mission-baja-aerospace.jpg') }})">
         </div>
-        <div class="w-1/2 py-48 px-16">
+        <div class="w-full md:w-1/2 py-10 md:py-48 px-10 md:px-16">
             <h1 class="text-4xl font-bold mb-7">
                 Mission
             </h1>
@@ -16,8 +15,8 @@
         </div>
     </section>
 
-    <section class="flex items-stretch">
-        <div class="w-1/2 py-48 px-16">
+    <section class="flex flex-col md:flex-row items-center md:items-stretch">
+        <div class="w-full md:w-1/2 p-10 md:py-48 md:px-16">
             <h1 class="text-4xl font-bold mb-7">
                 Vission
             </h1>
@@ -26,7 +25,7 @@
                 To be the benchmark for specialized technical and engineering support for the aerospace sector in Baja California in its seven (7) business segments a. Commercial Aviation, b. Defending, c. space, d. Drones, e.g. MRO/R&O, f. Logistic Air Cargo and g. Extreme Air Sports allows to maintain our leadership in Mexico in favor of our industry, through the maintenance of a specialized, inclusive and socially impact ecosystem in our community.
             </p>
         </div>
-        <div class="w-1/2 bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('img/about/vission-baja-aerospace.png') }})">
+        <div class="w-full md:w-1/2 bg-cover bg-img-section bg-no-repeat bg-center" style="background-image: url({{ asset('img/about/vission-baja-aerospace.png') }})">
 
         </div>
     </section>
@@ -40,7 +39,7 @@
                 </h1>
             </div>
 
-            <div class="flex items-start space-x-10">
+            <div class="flex flex-col md:flex-row items-start md:space-x-10">
 
                 <ul class="flex space-y-5 flex-col flex-1">
                     <li class="flex items-start space-x-3">
@@ -134,7 +133,7 @@
                 </h1>
             </div>
 
-            <div class="flex items-center space-x-10 mb-10">
+            <div class="flex flex-col md:flex-row items-center md:space-x-10 md:mb-10">
                 <div>
                     <i class="fas fa-chart-line" style="font-size: 75px"></i>
                     <h1 class="text-2xl font-bold mt-7">
@@ -166,7 +165,7 @@
                 </div>
             </div>
 
-            <div class="flex items-center space-x-10 mb-10">
+            <div class="flex flex-col md:flex-row items-center md:space-x-10 mb-10">
                 <div>
                     <i class="fas fa-award" style="font-size: 75px"></i>
                     <h1 class="text-2xl font-bold mt-7">
@@ -203,15 +202,15 @@
     <!-- Tomas -->
     <section class="py-10 md:py-16">
         <div class="container">
-            <div class="w-11/12 mx-auto">
+            <div class="w-full md:w-11/12 mx-auto">
                 <h1 class="text-4xl font-bold mb-12 text-center text-primary-900">
                     Board of Directors
                 </h1>
-                <div class="flex items-center space-x-20">
-                    <div class="w-1/3">
+                <div class="flex flex-col md:flex-row items-center md:space-x-20 space-y-10 md:space-y-0">
+                    <div class="w-full md:w-1/3">
                         <img src="{{ asset('img/tomas-sibaja.png') }}" alt="Tomás Sibaja" class="w-full h-auto rounded shadow">
                     </div>
-                    <div class="w-2/3">
+                    <div class="w-full md:w-2/3">
                         <h2 class="text-3xl font-bold mb-3 text-primary-900">
                             Tomás Sibaja
                         </h2>
@@ -252,8 +251,8 @@
     </section>
 
     <!-- Meet expert advisory board -->
-    <section class="flex items-stretch">
-        <div class="w-1/2 py-48 px-16">
+    <section class="flex flex-col md:flex-row items-stretch">
+        <div class="w-full md:w-1/2 p-10 md:py-48 md:px-16">
             <h1 class="text-4xl font-bold mb-10 text-center">
                 Meet <span class="text-primary-100">our expert</span> <br> advisory board
             </h1>
@@ -264,17 +263,17 @@
                 </a>
             </div>
         </div>
-        <div class="w-1/2 bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('img/about/directors.jpg') }})">
+        <div class="w-full md:w-1/2 bg-img-section bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('img/about/directors.jpg') }})">
 
         </div>
     </section>
 
     <!-- Benefits -->
-    <section class="flex items-stretch">
-        <div class="w-1/2 bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('img/about/benefits.jpg') }})">
+    <section class="flex flex-col md:flex-row items-stretch">
+        <div class="w-full md:w-1/2 bg-img-section bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('img/about/benefits.jpg') }})">
 
         </div>
-        <div class="w-1/2 py-48 px-16">
+        <div class="w-full md:w-1/2 p-10 md:py-48 md:px-16">
             <h1 class="text-4xl font-bold mb-7 text-center">
                 Do you know the benefits of belonging to our cluster?
             </h1>

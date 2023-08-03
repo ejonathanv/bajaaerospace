@@ -40,6 +40,7 @@
 
         <nav class="flex flex-col items-stretch text-white font-bold text-lg w-full my-auto">
             <a href="{{ route('home') }}">Home</a>
+            <a href="{{ route('about') }}">About us</a>
             @foreach($pages as $page)
             <a href="{{ route('page', $page->slug) }}">
                 {{ $page->name_on_navbar }}

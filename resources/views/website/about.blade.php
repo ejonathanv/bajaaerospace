@@ -126,9 +126,9 @@
 
         <div class="h-full w-full absolute top-0 left-0 right-0 bottom-0 bg-gray-900 opacity-50 z-1"></div>
 
-        <div class="container relative z-50">
-            <div class="flex justify-between items-center">
-                <h1>
+        <div class="container relative z-50 text-center">
+            <div class="flex items-center">
+                <h1 class="text-center flex-1">
                     Core Values
                 </h1>
             </div>
@@ -167,7 +167,7 @@
 
             <div class="flex flex-col md:flex-row items-center md:space-x-10 mb-10">
                 <div>
-                    <i class="fas fa-award" style="font-size: 75px"></i>
+                    <i class="fas fa-user-tie" style="font-size: 75px"></i>
                     <h1 class="text-2xl font-bold mt-7">
                         Professional
                     </h1>
@@ -187,7 +187,7 @@
                 </div>
 
                 <div>
-                    <i class="fas fa-lightbulb" style="font-size: 75px"></i>
+                    <i class="fas fa-thumbs-up" style="font-size: 75px"></i>
                     <h1 class="text-2xl font-bold mt-7">
                         Costumer-focused
                     </h1>

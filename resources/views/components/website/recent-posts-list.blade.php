@@ -5,36 +5,16 @@
 <hr class="my-5">
 
 <ul>
+    @foreach($other_posts as $post)
     <li>
-        <a href="#">
+        <a href="{{ route('post', $post) }}" class="!block !mb-2">
             <p class="!mb-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                {{ $post->title }}
             </p>
         </a>
         <p class="font-bold text-sm text-gray-400">
-            2021-01-01
+            {{ \Carbon\Carbon::parse($post->date)->format('d M, Y') }}
         </p>
     </li>
-
-    <li>
-        <a href="#">
-            <p class="!mb-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-        </a>
-        <p class="font-bold text-sm text-gray-400">
-            2021-01-01
-        </p>
-    </li>
-
-    <li>
-        <a href="#">
-            <p class="!mb-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-        </a>
-        <p class="font-bold text-sm text-gray-400">
-            2021-01-01
-        </p>
-    </li>
+    @endforeach
 </ul>

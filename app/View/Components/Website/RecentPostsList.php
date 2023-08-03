@@ -8,12 +8,17 @@ use Illuminate\View\Component;
 
 class RecentPostsList extends Component
 {
+
+    public $current;
+    public $other_posts;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($current)
     {
-        //
+        $this->current = $current;
+        $this->other_posts = \App\Models\Post::where('id', '!=', $current->id)->orderBy('created_at', 'desc')->take(5)->get();
     }
 
     /**

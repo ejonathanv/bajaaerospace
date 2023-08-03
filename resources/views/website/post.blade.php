@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="w-3/12">
-                <x-website.recent-posts-list></x-website.recent-posts-list>
+                <x-website.recent-posts-list :current="$post"></x-website.recent-posts-list>
             </div>
         </div>
     </section>

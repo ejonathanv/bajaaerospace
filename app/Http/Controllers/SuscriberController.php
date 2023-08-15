@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Suscriber;
+use App\Mail\NewSubscriber;
+use App\Mail\ThankYouForSubscribing;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreSuscriberRequest;
 use App\Http\Requests\UpdateSuscriberRequest;
-use App\Models\Suscriber;
 
 class SuscriberController extends Controller
 {
@@ -30,7 +33,15 @@ class SuscriberController extends Controller
      */
     public function store(StoreSuscriberRequest $request)
     {
-        //
+
+        $suscriber = Suscriber::create($request->validated());
+
+        Mail::to($suscriber->email)->send(new ThankYouForSubscribing($suscriber));
+        
+        Mail::to(env('MAIL_TO_ADDRESS'))->send(new NewSubscriber($suscriber));
+
+        return redirect()->back()->with('success', 'Thank you for suscribe');
+
     }
 
     /**
@@ -60,8 +71,9 @@ class SuscriberController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Suscriber $suscriber)
+    public function destroy(Suscriber $subscriber)
     {
-        //
+        $subscriber->delete();
+        return redirect()->back()->with('success', 'Suscriber deleted');
     }
 }

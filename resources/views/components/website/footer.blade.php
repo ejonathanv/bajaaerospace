@@ -25,12 +25,80 @@
 
         <div class="w-full md:w-6/12 text-center md:text-left">
             <h3>
-                Cluster B.C.
+                Connect with us
             </h3>
 
-            <p class="text-md !m-0">
-                The Baja California Aerospace Cluster is a non-profit organization that promotes the development of the aerospace industry in Baja California, Mexico.
-            </p>
+            <div class="flex items-center justify-center w-full mb-7">
+                <div class="w-1/2">
+                    <a href="#" class="text-white flex items-center space-x-2">
+                        <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-2xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <span>
+                            Facebook
+                        </span>
+                    </a>
+                </div>
+                <div class="w-1/2">
+                    <a href="#" class="text-white flex items-center space-x-2">
+                        <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-2xl">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <span>
+                            LinkedIn
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <div class="w-1/2">
+                    <a href="#" class="text-white flex items-center space-x-2">
+                        <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <span>
+                            Twitter
+                        </span>
+                    </a>
+                </div>
+                <div class="w-1/2">
+                    <a href="#" class="text-white flex items-center space-x-2">
+                        <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-2xl">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <span>
+                            YouTube
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <h3 class="mt-7">
+                Newsletter
+            </h3>
+
+            @if(session('success'))
+                <span class="text-green-500 text-sm mt-2">
+                    {{ session('success') }}
+                </span>
+            @endif
+
+            <form action="{{ route('register-subscriber') }}" class="flex items-stretch border-2 border-white rounded-md mt-2" method="POST">
+                @csrf
+                <input type="text" name="name" placeholder="Enter your name" class="w-full border-0 px-3 py-2 bg-transparent text-white placeholder-white focus:outline-none focus:ring-0 border-r-2 border-white" required>
+                <input type="text" name="email" placeholder="Enter your email address" class="w-full border-0 px-3 py-2 bg-transparent text-white placeholder-white focus:outline-none focus:ring-0" required>
+                <button type="submit" class="bg-white text-black px-3 py-2 font-bold disabled:opacity-50"
+                    onclick="this.disabled=true;this.form.submit();">
+                    <span class="whitespace-nowrap">Sign up</span>
+                </button>
+            </form>
+
+            @error('email')
+                <span class="text-red-500 text-sm mt-2">
+                    {{ $message }}
+                </span>
+            @enderror
         </div>
     </div>
 </footer>

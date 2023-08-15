@@ -27,6 +27,7 @@ Route::get('our-webinars/register', [WebsiteController::class, 'webinarRegister'
 Route::post('our-webinars/register', [WebinarRegisterController::class, 'store'])->name('webinar.register.store');
 Route::get('our-webinars/success-register', [WebsiteController::class, 'webinarSuccessRegister'])->name('webinars-success-register');
 Route::get('contact', [WebsiteController::class, 'contact'])->name('contact');
+Route::post('register-subscriber', [SuscriberController::class, 'store'])->name('register-subscriber');
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');

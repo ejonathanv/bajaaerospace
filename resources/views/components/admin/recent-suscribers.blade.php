@@ -5,7 +5,7 @@
         </h3>
 
         <div>
-            <a href="#" class="btn btn-primary">
+            <a href="{{ route('subscribers.index') }}" class="btn btn-primary">
                 View all
             </a>
         </div>

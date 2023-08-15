@@ -30,7 +30,7 @@
 
             <div class="flex items-center justify-center w-full mb-7">
                 <div class="w-1/2">
-                    <a href="#" class="text-white flex items-center space-x-2">
+                    <a href="https://www.facebook.com/BajaAerospaceMX?mibextid=ZbWKwL" class="text-white flex items-center space-x-2" target="_blank">
                         <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-2xl">
                             <i class="fab fa-facebook-f"></i>
                         </div>
@@ -40,7 +40,7 @@
                     </a>
                 </div>
                 <div class="w-1/2">
-                    <a href="#" class="text-white flex items-center space-x-2">
+                    <a href="https://www.linkedin.com/in/clusteraerobc" class="text-white flex items-center space-x-2" target="_blank"> 
                         <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-2xl">
                             <i class="fab fa-linkedin-in"></i>
                         </div>
@@ -53,7 +53,7 @@
 
             <div class="flex items-center justify-center">
                 <div class="w-1/2">
-                    <a href="#" class="text-white flex items-center space-x-2">
+                    <a href="https://twitter.com/ClusterAeroBC?t=Y2KaIvYixvfOZzQsU_IPbg&s=09" class="text-white flex items-center space-x-2" target="_blank">
                         <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-2xl">
                             <i class="fab fa-twitter"></i>
                         </div>
@@ -63,7 +63,7 @@
                     </a>
                 </div>
                 <div class="w-1/2">
-                    <a href="#" class="text-white flex items-center space-x-2">
+                    <a href="https://www.youtube.com/@bajaaerospacecluster3720" class="text-white flex items-center space-x-2" target="_blank">
                         <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-2xl">
                             <i class="fab fa-youtube"></i>
                         </div>

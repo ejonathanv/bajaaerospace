@@ -14,23 +14,51 @@
                 <p class="text-white !text-sm font-bold opacity-75 !mb-7">
                     We are a dynamic and energized group of passionate aerospace enthusiasts with a well established network in the aerospace industry worldwide.
                 </p>
-                <form action="">
+
+                @if(session('success'))
+                    <p class="text-secondary-100 text-base font-bold mb-7">
+                        {{ session('success') }}
+                    </p>
+                @endif
+
+                <form action="{{ route('store-member') }}" method="POST">
+                    @csrf
                     <div class="form-group">
-                        <input type="text" placeholder="What is your name" class="form-control">
+                        <input type="text" name="name" placeholder="What is your name" class="form-control" required>
+                        @error('name')
+                            <span class="text-secondary-100 text-sm font-bold">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="What is your email" class="form-control">
+                        <input type="text" name="email" placeholder="What is your email" class="form-control" required>
+                        @error('email')
+                            <span class="text-secondary-100 text-sm font-bold">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="What is your phone number" class="form-control">
+                        <input type="text" name="phone" placeholder="What is your phone number (Optional)" class="form-control">
+                        @error('phone')
+                            <span class="text-secondary-100 text-sm font-bold">{{ $message }}</span>
+                        @enderror
                     </div>
-                    <div class="form-group text-sm">
+                    <div class="form-group text-sm !mb-0">
                         <label class="text-white">
-                            <input type="checkbox" class="form-control">
+                            <input type="checkbox" name="terms" class="form-control" required>
                             I agree to the <a href="#" class="link">terms and conditions</a>
                         </label>
                     </div>
-                    <button class="btn btn-secondary w-full text-center">
+                    @error('terms')
+                        <span class="block mb-2 text-secondary-100 text-sm font-bold">{{ $message }}</span>
+                    @enderror
+
+                    <div class="form-group text-sm">
+                        <label class="text-white">
+                            <input type="checkbox" name="newsletter" class="form-control">
+                            I want to receive the newsletter
+                        </label>
+                    </div>
+
+                    <button class="btn btn-secondary w-full text-center disabled:opacity-50" type="submit" onclick="this.classList.add('disabled'); this.innerText = 'Sending...'; this.setAttribute('disabled', true)">
                         Send request
                     </button>
                 </form>

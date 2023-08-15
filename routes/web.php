@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebinarController;
 use App\Http\Controllers\WebsiteController;
@@ -28,6 +29,7 @@ Route::post('our-webinars/register', [WebinarRegisterController::class, 'store']
 Route::get('our-webinars/success-register', [WebsiteController::class, 'webinarSuccessRegister'])->name('webinars-success-register');
 Route::get('contact', [WebsiteController::class, 'contact'])->name('contact');
 Route::post('register-subscriber', [SuscriberController::class, 'store'])->name('register-subscriber');
+Route::post('store-member', [MemberController::class, 'store'])->name('store-member');
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -35,6 +37,8 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], fu
     Route::resource('pages', PageController::class);
     Route::resource('events', EventController::class);
     Route::resource('subscribers', SuscriberController::class);
+    Route::resource('members', MemberController::class)->except('store');
+    Route::post('members/{member}/activate', [MemberController::class, 'activate'])->name('members.activate');
     Route::resource('webinars', WebinarController::class);
     Route::post('webinar/{webinar}/download-registers', [WebinarController::class, 'download'])->name('download');
 });

@@ -210,6 +210,14 @@ p{
     @apply bg-logo-blue text-white;
 }
 
+.btn-primary-outline{
+    @apply border border-logo-blue text-logo-blue;
+}
+
+.btn-secondary-outline{
+    @apply border border-secondary-100 text-secondary-900;
+}
+
 /* ALERT */
 .alert{
     @apply rounded-lg p-4 mb-4;

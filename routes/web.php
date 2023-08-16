@@ -28,6 +28,7 @@ Route::get('our-webinars/register', [WebsiteController::class, 'webinarRegister'
 Route::post('our-webinars/register', [WebinarRegisterController::class, 'store'])->name('webinar.register.store');
 Route::get('our-webinars/success-register', [WebsiteController::class, 'webinarSuccessRegister'])->name('webinars-success-register');
 Route::get('contact', [WebsiteController::class, 'contact'])->name('contact');
+Route::post('contact-form', [WebsiteController::class, 'contactForm'])->name('contact-form');
 Route::post('register-subscriber', [SuscriberController::class, 'store'])->name('register-subscriber');
 Route::post('store-member', [MemberController::class, 'store'])->name('store-member');
 

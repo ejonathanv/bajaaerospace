@@ -9,7 +9,15 @@
                     <p class="text-gray-500 font-bold text-lg mb-7">
                         Please fill out the form below and we will contact you as soon as possible.
                     </p>
-                    <form action="">
+
+                    @if(session('success'))
+                        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6" role="alert">
+                            <span class="block sm:inline">{{ session('success') }}</span>
+                        </div>
+                    @endif
+
+                    <form action="{{ route('contact-form') }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label for="">
                                 Full name:
@@ -40,7 +48,14 @@
                                 I agree to the <a href="#" class="link">terms and conditions</a>
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-primary">
+                        <div class="form-group">
+                            <label for="">
+                                <input type="checkbox" name="newsletter">
+                                I want to receive the newsletter
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary disabled:opacity-50"
+                            onclick="this.classList.add('disabled'); this.innerText = 'Sending...'; this.setAttribute('disabled', true)">
                             Send message
                         </button>
                     </form>

@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebinarController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostImageController;
 use App\Http\Controllers\SuscriberController;
 use App\Http\Controllers\WebinarRegisterController;
 
@@ -35,6 +36,7 @@ Route::post('store-member', [MemberController::class, 'store'])->name('store-mem
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('posts', PostController::class);
+    Route::get('delete-image/{image}', [PostImageController::class, 'deleteImage'])->name('delete-image');
     Route::resource('pages', PageController::class);
     Route::resource('events', EventController::class);
     Route::resource('subscribers', SuscriberController::class);

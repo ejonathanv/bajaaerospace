@@ -33,6 +33,27 @@
         </div>
 
         <div class="mt-4">
+            <!-- We need to add multiple image for owl carousel here -->
+            <x-input-label for="images" :value="__('Slider images')" />
+            <input type="file" name="images[]" id="images" class="form-control" multiple accept="image/*">
+            <x-input-error :messages="$errors->get('images')" class="mt-2" />
+        </div>
+
+        @if($post->images)
+            <div class="mt-4 flex items-stretch space-x-2">
+                @foreach($post->images as $image)
+                    <div class="item relative">
+                        <img src="{{ asset('posts/slides/' . $image->name) }}" alt="" class="w-24 h-24 object-cover rounded mt-5">
+                        <a href="{{ route('delete-image', [$image]) }}" class="text-red-500 hover:text-red-700 block text-sm font-bold text-center mt-2" title="Delete image">
+                            Eliminar
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        @endif
+
+
+        <div class="mt-4">
             <x-input-label for="title" :value="__('Title')" />
             <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="$post ? $post->title : old('title')" required autofocus autocomplete="title" />
             <x-input-error :messages="$errors->get('title')" class="mt-2" />

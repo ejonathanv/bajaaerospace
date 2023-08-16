@@ -11,6 +11,10 @@ class Post extends Model
 
     protected $guarded = [];
 
+    public function images(){
+        return $this->hasMany(PostImage::class, 'post_id', 'id');
+    }
+
     public function getCategoryNameAttribute(){
         switch ($this->category) {
             case 'posts':

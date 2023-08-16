@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\PostImage;
 use Illuminate\Support\Str;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
@@ -45,6 +46,10 @@ class PostController extends Controller
             $this->uploadCover($request, $post);
         }
 
+        if($request->has('images')){
+            $this->uploadImages($request, $post);
+        }
+
         return redirect()->route('posts.show', $post)->with('success', 'Post created successfully!');
     }
 
@@ -82,6 +87,10 @@ class PostController extends Controller
             $this->uploadCover($request, $post);
         }
 
+        if($request->has('images')){
+            $this->uploadImages($request, $post);
+        }
+
         return redirect()->route('posts.show', $post)->with('success', 'Post updated successfully!');
     }
 
@@ -94,6 +103,19 @@ class PostController extends Controller
 
         $post->cover = $fileName;
         $post->save();
+    }
+
+    public function uploadImages($request, $post){
+        $files = $request->file('images');
+        foreach($files as $file){
+            $fileName = hexdec(uniqid()) . '.' . $file->getClientOriginalExtension();
+            // We need to move this file to public/posts/slides folder
+            $file->move('posts/slides', $fileName);
+            $image = new PostImage();
+            $image->post_id = $post->id;
+            $image->name = $fileName;
+            $image->save();
+        }
     }
 
     /**

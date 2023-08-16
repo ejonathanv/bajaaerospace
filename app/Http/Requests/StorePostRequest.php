@@ -27,6 +27,7 @@ class StorePostRequest extends FormRequest
             'category_id' => 'required|in:posts,news',
             'content' => 'required|string',
             'cover' => 'nullable|image|max:5000|mimes:jpg,jpeg,png',
+            'images.*' => 'nullable|image|max:5000|mimes:jpg,jpeg,png',
         ];
     }
 }

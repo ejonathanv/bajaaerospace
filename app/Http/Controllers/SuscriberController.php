@@ -40,7 +40,7 @@ class SuscriberController extends Controller
         
         Mail::to(env('MAIL_TO_ADDRESS'))->send(new NewSubscriber($suscriber));
 
-        return redirect()->back()->with('success', 'Thank you for suscribe');
+        return redirect()->back()->with('successNewsletter', 'Thank you for suscribe');
 
     }
 

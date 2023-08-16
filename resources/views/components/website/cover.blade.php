@@ -15,9 +15,9 @@
                     We are a dynamic and energized group of passionate aerospace enthusiasts with a well established network in the aerospace industry worldwide.
                 </p>
 
-                @if(session('success'))
+                @if(session('successMemberRegistration'))
                     <p class="text-secondary-100 text-base font-bold mb-7">
-                        {{ session('success') }}
+                        {{ session('successMemberRegistration') }}
                     </p>
                 @endif
 

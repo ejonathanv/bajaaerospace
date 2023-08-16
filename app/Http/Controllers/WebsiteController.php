@@ -102,7 +102,7 @@ class WebsiteController extends Controller
 
         Mail::to($request['email'])->send(new ContactFormThanks($request));
 
-        return redirect()->back()->with('success', 'We have received your message, we will contact you shortly.');
+        return redirect()->back()->with('successContactForm', 'We have received your message, we will contact you shortly.');
     }
 
 }

@@ -78,9 +78,9 @@
                 Newsletter
             </h3>
 
-            @if(session('success'))
+            @if(session('successNewsletter'))
                 <span class="text-green-500 text-sm mt-2">
-                    {{ session('success') }}
+                    {{ session('successNewsletter') }}
                 </span>
             @endif
 

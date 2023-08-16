@@ -24,7 +24,7 @@ class StoreMemberRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:members,email',
-            'phone' => 'nullable|string|max:255',
+            'phone' => 'nullable|string|max:255|unique:members,phone',
             'terms' => 'required|accepted',
         ];
     }

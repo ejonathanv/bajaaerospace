@@ -53,7 +53,7 @@ class MemberController extends Controller
         Mail::to($member->email)->send(new MemberRequest($member));
         Mail::to(env('MAIL_FROM_ADDRESS'))->send(new NewMemberRequest($member));
 
-        return redirect()->route('home')->with('success', 'Congrats! Your request has been sent.');
+        return redirect()->route('home')->with('successMemberRegistration', 'Congrats! Your request has been sent.');
     }
 
     /**

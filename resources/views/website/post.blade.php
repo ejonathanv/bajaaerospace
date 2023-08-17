@@ -2,10 +2,8 @@
     <section class="py-10">
         <div class="container flex items-start space-x-16">
             <div class="w-full md:w-9/12">
-                {{--
-                    <img src="{{ asset('posts/'.$post->cover) }}" alt="{{ $post->title }}" class="w-full rounded shadow">
-                --}}
-
+                
+                @if(count($post->images))
                 <div class="relative">
                     <div class="owl-carousel overflow-hidden rounded shadow">
                         @foreach($post->images as $image)
@@ -23,6 +21,9 @@
                         <i class="fas fa-chevron-left"></i>
                     </a>
                 </div>
+                @else
+                <img src="{{ asset('posts/'.$post->cover) }}" alt="{{ $post->title }}" class="w-full rounded shadow">
+                @endif
 
                 <h1 class="!mb-6 mt-10">
                     {{ $post->title }}

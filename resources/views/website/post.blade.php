@@ -29,7 +29,7 @@
                     {{ $post->title }}
                 </h1>
 
-                <p>m
+                <p>
                     <span class="text-gray-900">
                         Published at:
                     </span>

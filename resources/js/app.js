@@ -23,6 +23,31 @@ if( editorBox ) {
         console.error( error );
     } );
 }
+
+$(document).ready(function() {
+
+    let carousel = $(".owl-carousel");
+
+    carousel.owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        items: 1,
+    });
+
+    $('.owl-next').click(function(event) {
+        event.preventDefault();
+        carousel.trigger('next.owl.carousel');
+    });
+   
+    $('.owl-prev').click(function(event) {
+        event.preventDefault();
+        carousel.trigger('prev.owl.carousel');
+    });
+
+});
     
 
 const { createApp } = Vue
@@ -65,6 +90,6 @@ createApp({
 
             let sectionRef = this.$refs['section'+id];
             window.scrollTo(0, sectionRef.offsetTop - 100);
-        }
+        },
     }
 }).mount('#app')

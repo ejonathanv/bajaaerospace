@@ -258,3 +258,33 @@ p{
         height: 50vh;
     }
 }
+
+.post-image-slide{
+    @apply bg-center bg-cover bg-no-repeat;
+    height: 500px;
+    width: 838.5px;
+}
+
+@media screen and (max-width: 768px){
+    .post-image-slide{
+        height: 300px;
+        width: 100vw;
+    }
+}
+
+
+.owl-next, .owl-prev{
+    @apply bg-white bg-opacity-100 rounded-full w-10 h-10 flex items-center justify-center mt-2;
+}
+
+.owl-next:hover, .owl-prev:hover{
+    @apply bg-opacity-75;
+}
+
+.owl-next{
+    @apply absolute top-1/2 right-3 transform -translate-y-1/2 z-10;
+}
+
+.owl-prev{
+    @apply absolute top-1/2 left-3 transform -translate-y-1/2 z-10;
+}

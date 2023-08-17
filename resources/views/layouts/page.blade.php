@@ -10,8 +10,12 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
 
         <!-- Scripts -->
+        <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
+        <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
         <script src="https://kit.fontawesome.com/133291f590.js" crossorigin="anonymous"></script>
         <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

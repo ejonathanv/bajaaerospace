@@ -16,7 +16,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('contact-form') }}" method="POST">
+                    <form action="{{ route('contact-form') }}" method="POST" onsubmit="this.querySelector('button').disabled = true">
                         @csrf
                         <div class="form-group">
                             <label for="">
@@ -54,8 +54,7 @@
                                 I want to receive the newsletter
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-primary disabled:opacity-50"
-                            onclick="this.classList.add('disabled'); this.innerText = 'Sending...'; this.setAttribute('disabled', true)">
+                        <button type="submit" class="btn btn-primary disabled:opacity-50">
                             Send message
                         </button>
                     </form>

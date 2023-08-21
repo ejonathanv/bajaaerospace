@@ -84,12 +84,11 @@
                 </span>
             @endif
 
-            <form action="{{ route('register-subscriber') }}" class="flex items-stretch border-2 border-white rounded-md mt-2" method="POST">
+            <form action="{{ route('register-subscriber') }}" class="flex items-stretch border-2 border-white rounded-md mt-2" method="POST" onsubmit="this.querySelector('button').disabled = true">
                 @csrf
                 <input type="text" name="name" placeholder="Enter your name" class="w-full border-0 px-3 py-2 bg-transparent text-white placeholder-white focus:outline-none focus:ring-0 border-r-2 border-white" required>
                 <input type="text" name="email" placeholder="Enter your email address" class="w-full border-0 px-3 py-2 bg-transparent text-white placeholder-white focus:outline-none focus:ring-0" required>
-                <button type="submit" class="bg-white text-black px-3 py-2 font-bold disabled:opacity-50"
-                    onclick="this.disabled=true;this.form.submit();">
+                <button type="submit" class="bg-white text-black px-3 py-2 font-bold disabled:opacity-50">
                     <span class="whitespace-nowrap">Sign up</span>
                 </button>
             </form>

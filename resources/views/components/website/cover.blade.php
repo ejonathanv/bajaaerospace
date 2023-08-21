@@ -21,7 +21,7 @@
                     </p>
                 @endif
 
-                <form action="{{ route('store-member') }}" method="POST">
+                <form action="{{ route('store-member') }}" method="POST" onsubmit="this.querySelector('button').disabled = true">
                     @csrf
                     <div class="form-group">
                         <input type="text" name="name" placeholder="What is your name" class="form-control" required>
@@ -58,7 +58,7 @@
                         </label>
                     </div>
 
-                    <button class="btn btn-secondary w-full text-center disabled:opacity-50" type="submit" onclick="this.classList.add('disabled'); this.innerText = 'Sending...'; this.setAttribute('disabled', true)">
+                    <button class="btn btn-secondary w-full text-center disabled:opacity-50" type="submit">
                         Send request
                     </button>
                 </form>

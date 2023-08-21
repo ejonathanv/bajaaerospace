@@ -1,6 +1,8 @@
 <li class="flex items-start space-x-3">
     <div>
-        <img src="{{ asset('posts/' . $post->cover) }}" alt="" class="w-20 h-20 object-cover rounded">
+        <div class="w-20">
+            <img src="{{ asset('posts/' . $post->cover) }}" alt="" class="w-20 h-20 object-cover rounded">
+        </div>
     </div>
     <div>
         <h4 class="!mb-0">

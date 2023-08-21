@@ -39,6 +39,9 @@
             <x-input-error :messages="$errors->get('images')" class="mt-2" />
         </div>
 
+
+        @isset($post)
+
         @if($post->images)
             <div class="mt-4 flex items-stretch space-x-2">
                 @foreach($post->images as $image)
@@ -51,6 +54,8 @@
                 @endforeach
             </div>
         @endif
+
+        @endisset
 
 
         <div class="mt-4">

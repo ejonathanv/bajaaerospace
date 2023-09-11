@@ -1,4 +1,9 @@
-<section class="bg-white pb-10 md:pb-16">
+<section class="bg-gray-100 py-10 md:py-16">
+
+    <h2 class="text-center mb-10">
+        Our Industry Segments
+    </h2>
+
     <div class="container flex flex-col md:flex-row items-stretch flex-wrap justify-center">
         <div class="w-full md:w-1/4 px-2 mb-6">
             <div class="bg-white shadow rounded overflow-hidden h-full">

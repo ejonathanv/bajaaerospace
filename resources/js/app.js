@@ -63,6 +63,7 @@ createApp({
     },
     mounted() {
         this.toggleHeader();
+        this.number_counter_on_scroll();
     },
     methods: {
         toggleHeader() {
@@ -91,5 +92,29 @@ createApp({
             let sectionRef = this.$refs['section'+id];
             window.scrollTo(0, sectionRef.offsetTop - 100);
         },
+        number_counter_on_scroll() {
+            // let number_counter = $('.number_counter');
+            // Each counter has a data-number_counter attribute with the number to count to
+            let number_counter = $('.number_counter');
+
+            $(window).scroll(function() {
+                number_counter.each(function() {
+                    let $this = $(this);
+                    let top_of_element = $this.offset().top;
+                                        
+
+                    if($this.text() == 0 && $(window).scrollTop() + $(window).height() > top_of_element) {
+                        let number = $this.data('number_counter');
+                        $({ Counter: 0 }).animate({ Counter: number }, {
+                            duration: 2000,
+                            easing: 'swing',
+                            step: function() {
+                                $this.text(Math.ceil(this.Counter));
+                            }
+                        });
+                    }
+                });
+            });
+        }
     }
 }).mount('#app')

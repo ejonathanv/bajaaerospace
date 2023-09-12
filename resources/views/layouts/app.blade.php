@@ -13,8 +13,19 @@
 
         <!-- Scripts -->
         <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+        <script src="https://kit.fontawesome.com/133291f590.js" crossorigin="anonymous"></script>
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ5HSGBYCG"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-LQ5HSGBYCG');
+        </script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

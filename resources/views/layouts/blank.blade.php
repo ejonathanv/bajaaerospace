@@ -13,6 +13,8 @@
 
         <!-- Scripts -->
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://kit.fontawesome.com/133291f590.js" crossorigin="anonymous"></script>
+        
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased" id="app">

@@ -2,6 +2,7 @@
     <section class="py-16 bg-gray-100">
         <div class="container flex items-start space-x-10">
             <div class="w-9/12">
+                @if($article)
                 <h3 class="mb-6">
                     {{ $article->title }}
                 </h3>
@@ -10,6 +11,11 @@
                     class="w-full"
                     style="height: 80vh;"
                      />
+                @else
+                <h3 class="mb-6">
+                    No hay ediciones disponibles
+                </h3>
+                @endif
             </div>
             <div class="w-3/12">
                 <h3 class="mb-6">

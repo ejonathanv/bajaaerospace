@@ -1,7 +1,7 @@
 <x-page-layout title="Articles" subtitle="Here you will find articles about space insdustry">
     <section class="py-16 bg-gray-100">
-        <div class="container flex items-start space-x-10">
-            <div class="w-9/12">
+        <div class="container flex flex-col md:flex-row space-y-7 md:space-y-0 items-start md:space-x-10">
+            <div class="w-full md:w-9/12">
                 @if($article)
                 <h3 class="mb-6">
                     {{ $article->title }}
@@ -17,7 +17,7 @@
                 </h3>
                 @endif
             </div>
-            <div class="w-3/12">
+            <div class="w-full md:w-3/12">
                 <h3 class="mb-6">
                     Ediciones
                 </h3>

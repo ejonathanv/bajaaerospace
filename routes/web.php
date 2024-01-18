@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebinarController;
 use App\Http\Controllers\WebsiteController;
@@ -21,6 +22,8 @@ Route::get('blog', [WebsiteController::class, 'blog'])->name('blog');
 Route::get('blog/{post:slug}', [WebsiteController::class, 'post'])->name('post');
 Route::get('news-aero', [WebsiteController::class, 'news'])->name('news-aero');
 Route::get('news-aero/{post:slug}', [WebsiteController::class, 'post'])->name('new');
+Route::get('articles-list', [WebsiteController::class, 'articles'])->name('articles');
+Route::get('articles-list/{article:slug}', [WebsiteController::class, 'article'])->name('article');
 Route::get('events-list', [WebsiteController::class, 'events'])->name('events');
 Route::get('events-list/{event:slug}', [WebsiteController::class, 'event'])->name('event');
 Route::get('events-list/{event:slug}/register', [WebsiteController::class, 'eventRegister'])->name('event.register');
@@ -36,6 +39,7 @@ Route::post('store-member', [MemberController::class, 'store'])->name('store-mem
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('posts', PostController::class);
+    Route::resource('articles', ArticleController::class);
     Route::get('delete-image/{image}', [PostImageController::class, 'deleteImage'])->name('delete-image');
     Route::resource('pages', PageController::class);
     Route::resource('events', EventController::class);

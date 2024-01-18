@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use App\Models\Post;
 use App\Models\Event;
+use App\Models\Article;
 use App\Models\Webinar;
 use App\Mail\ContactForm;
 use App\Models\Suscriber;
@@ -30,6 +31,17 @@ class WebsiteController extends Controller
     public function blog(){
         $posts = Post::orderBy('created_at', 'desc')->where('category', 'posts')->paginate(9);
         return view('website.blog', compact('posts'));
+    }
+
+    public function articles(){
+        $articles = Article::orderBy('created_at', 'desc')->get();
+        $article = $articles->first();
+        return view('website.articles', compact('articles', 'article'));
+    }
+
+    public function article(Article $article){
+        $articles = Article::orderBy('created_at', 'desc')->get();
+        return view('website.articles', compact('articles', 'article'));
     }
 
     public function news(){

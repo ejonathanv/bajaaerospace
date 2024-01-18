@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\EventController;
@@ -13,6 +14,15 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostImageController;
 use App\Http\Controllers\SuscriberController;
 use App\Http\Controllers\WebinarRegisterController;
+
+
+// Necesitamos una ruta para correr las migraciones:
+Route::get('/migrate', function () {
+    Artisan::call('migrate');
+    $output = Artisan::output();
+    
+    return '<pre>'.$output.'</pre>';
+});
 
 
 Route::get('/', [WebsiteController::class, 'index'])->name('home');

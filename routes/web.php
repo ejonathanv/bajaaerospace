@@ -16,14 +16,6 @@ use App\Http\Controllers\SuscriberController;
 use App\Http\Controllers\WebinarRegisterController;
 
 
-// Necesitamos una ruta para correr las migraciones:
-Route::get('/migrate', function () {
-    Artisan::call('migrate');
-    $output = Artisan::output();
-    
-    return '<pre>'.$output.'</pre>';
-});
-
 
 Route::get('/', [WebsiteController::class, 'index'])->name('home');
 Route::get('p/{page:slug}', [WebsiteController::class, 'page'])->name('page');

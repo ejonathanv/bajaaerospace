@@ -16,7 +16,6 @@ use App\Http\Controllers\SuscriberController;
 use App\Http\Controllers\WebinarRegisterController;
 
 
-
 Route::get('/', [WebsiteController::class, 'index'])->name('home');
 Route::get('p/{page:slug}', [WebsiteController::class, 'page'])->name('page');
 Route::get('/about', [WebsiteController::class, 'about'])->name('about');

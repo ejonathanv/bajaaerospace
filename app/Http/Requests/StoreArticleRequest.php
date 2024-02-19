@@ -25,7 +25,8 @@ class StoreArticleRequest extends FormRequest
             'title' => 'required|string|unique:articles,title',
             'description' => 'nullable|string',
             'magazineThumb' => 'required|image',
-            'magazineUrl' => 'required|url',
+            'magazineFile' => 'required_without:magazineUrl|file|mimes:pdf',
+            'magazineUrl' => 'sometimes|required|url',
         ];
     }
 }

@@ -3,18 +3,27 @@
         <div class="container flex flex-col md:flex-row space-y-7 md:space-y-0 items-start md:space-x-10">
             <div class="w-full md:w-9/12">
                 @if($article)
-                <h3 class="mb-6">
-                    {{ $article->title }}
-                </h3>
-                <iframe src="{{ $article->magazineUrl }}" 
-                    frameborder="0"
-                    class="w-full"
-                    style="height: 80vh;"
-                     />
+                    <h3 class="mb-6">
+                        {{ $article->title }}
+                    </h3>
+                    @if($article->magazineUrl)
+                    <iframe src="{{ $article->magazineUrl }}" 
+                        frameborder="0"
+                        class="w-full"
+                        style="height: 80vh;"
+                        />
+                    @else
+                    {{ $article->magazineFile }}
+                    <iframe src="{{ asset('articles/' . $article->magazineFile) }}" 
+                        frameborder="0"
+                        class="w-full"
+                        style="height: 80vh;"
+                        />
+                    @endif
                 @else
-                <h3 class="mb-6">
-                    No hay ediciones disponibles
-                </h3>
+                    <h3 class="mb-6">
+                        No hay ediciones disponibles
+                    </h3>
                 @endif
             </div>
             <div class="w-full md:w-3/12">

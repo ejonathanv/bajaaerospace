@@ -31,10 +31,10 @@ class ArticleController extends Controller
      */
     public function store(StoreArticleRequest $request)
     {
+
         $article = new Article();
         $article->title = $request->title;
         $article->description = $request->description ?? '';
-        $article->magazineUrl = $request->magazineUrl;
         $article->slug = Str::slug($request->title);
         
         $thumb = $request->file('magazineThumb');
@@ -42,6 +42,15 @@ class ArticleController extends Controller
         $thumb->move(public_path('articles'), $thumbName);
 
         $article->magazineThumb = $thumbName;
+
+        if($request->hasFile('magazineFile')){
+            $file = $request->file('magazineFile');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('articles'), $fileName);
+            $article->magazineFile = $fileName;
+        } else {
+            $article->magazineUrl = $request->magazineUrl;
+        }
 
         $article->save();
 
@@ -72,7 +81,6 @@ class ArticleController extends Controller
     {
         $article->title = $request->title;
         $article->description = $request->description ?? '';
-        $article->magazineUrl = $request->magazineUrl;
         $article->slug = Str::slug($request->title);
 
         if($request->hasFile('magazineThumb')){
@@ -80,6 +88,17 @@ class ArticleController extends Controller
             $thumbName = time() . '.' . $thumb->getClientOriginalExtension();
             $thumb->move(public_path('articles'), $thumbName);
             $article->magazineThumb = $thumbName;
+        }
+
+        if($request->hasFile('magazineFile')){
+            $file = $request->file('magazineFile');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('articles'), $fileName);
+            $article->magazineFile = $fileName;
+            $article->magazineUrl = null;
+        } else {
+            $article->magazineUrl = $request->magazineUrl;
+            $article->magazineFile = null;
         }
 
         $article->save();

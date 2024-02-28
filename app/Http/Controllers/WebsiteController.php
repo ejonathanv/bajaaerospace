@@ -110,9 +110,9 @@ class WebsiteController extends Controller
             ]);
         }
 
-        Mail::to(env('MAIL_FROM_ADDRESS'))->send(new ContactForm($request));
+        // Mail::to(env('MAIL_FROM_ADDRESS'))->send(new ContactForm($request));
 
-        Mail::to($request['email'])->send(new ContactFormThanks($request));
+        // Mail::to($request['email'])->send(new ContactFormThanks($request));
 
         return redirect()->back()->with('successContactForm', 'We have received your message, we will contact you shortly.');
     }

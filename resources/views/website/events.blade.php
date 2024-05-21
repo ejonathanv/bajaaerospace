@@ -28,13 +28,12 @@
                         <p class="text-sm text-gray-500">
                             {{ $event->description }}
                         </p>
-
                         <div class="flex flex-row items-center space-x-3 mt-10">
                             <a href="{{ route('event', $event->slug) }}" class="btn btn-primary whitespace-nowrap">
                                 <i class="fas fa-info-circle mr-2"></i>
                                 More details
                             </a>
-                            <a href="#" class="btn btn-secondary nowrap whitespace-nowrap">
+                            <a href="{{ route('event.register', $event) }}" class="btn btn-secondary nowrap whitespace-nowrap">
                                 <i class="fas fa-calendar-alt mr-2"></i>
                                 Subscribe to this event
                             </a>

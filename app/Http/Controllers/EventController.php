@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Event;
 use Illuminate\Support\Str;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\EventRegistersExport;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
-use Carbon\Carbon;
 
 class EventController extends Controller
 {
@@ -70,6 +72,11 @@ class EventController extends Controller
     public function show(Event $event)
     {
         return view('admin.events.show', compact('event'));
+    }
+
+    public function download(Event $event){
+        $fileName = Str::slug($event->title) . '-registros.xlsx';
+        return Excel::download(new EventRegistersExport($event->id), $fileName);
     }
 
     /**

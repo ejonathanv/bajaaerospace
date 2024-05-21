@@ -22,23 +22,18 @@
                     {{ \Carbon\Carbon::parse($event->end_date)->format('d/m/Y') }} - {{ \Carbon\Carbon::parse($event->end_time)->format('H:i a') }}
                 </p>
                 @endif
-
                 <p class="text-gray-500 font-bold text-sm">
                     <span class="text-gray-900">
                         Location:
                     </span>
                     {{ $event->location }}
                 </p>
-
                 <p class="text-gray-500 font-bold text-sm">
                     <span class="text-gray-900">
                         Address:
                     </span>
                     {{ $event->address }}
-                <p>
-
-                    {{ $event->description }}
-                </p>
+                <p>{{ $event->description }}</p>
             </div>
             <div class="w-full md:w-3/12">
                 <h4>

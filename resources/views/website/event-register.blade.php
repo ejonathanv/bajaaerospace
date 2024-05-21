@@ -1,10 +1,27 @@
 <x-page-layout title="Register to event" subtitle="{{ $event->title }}">
     <section class="py-10 md:py-16 bg-gray-100">
-        <div class="container flex items-start space-x-16">
+        <div class="container flex flex-col md:flex-row items-start space-y-10 md:space-y-0 md:space-x-16">
             <div class="w-full md:w-9/12">
 
-                <form action="">
+                <!-- Vamos a revisar si hay errores -->
+                @if(session('success'))
+                    <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-5" role="alert">
+                        <p class="font-bold">Success</p>
+                        <p>{{ session('success') }}</p>
+                    </div>
+                @endif
 
+                @if(session('error'))
+                    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-5" role="alert">
+                        <p class="font-bold">Error</p>
+                        <p>{{ session('error') }}</p>
+                    </div>
+                @endif
+                
+
+
+                <form action="{{ route('submit-event-registration', $event) }}" method="POST">
+                    @csrf
                     <h1 class="mb-5">
                         Register to event
                     </h1>
@@ -49,6 +66,32 @@
                                 {{ $message }}
                             </p>
                         @enderror
+                    </div>
+
+                    <div class="flex items-center space-x-5">
+                        <div class="form-group flex-1">
+                            <label for="">
+                                Company (optional):
+                            </label>
+                            <input type="text" class="form-control light" name="company" placeholder="What is your company?">
+                            @error('company')
+                                <p class="text-red-600 text-sm mt-1">
+                                    {{ $message }}
+                                </p>
+                            @enderror
+                        </div>
+
+                        <div class="form-group flex-1">
+                            <label for="">
+                                Job title (optional):
+                            </label>
+                            <input type="text" class="form-control light" name="job_title" placeholder="What is your job title?">
+                            @error('job_title')
+                                <p class="text-red-600 text-sm mt-1">
+                                    {{ $message }}
+                                </p>
+                            @enderror
+                        </div>
                     </div>
 
                     <button class="btn btn-primary">

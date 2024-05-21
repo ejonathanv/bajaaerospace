@@ -11,7 +11,9 @@ use App\Mail\ContactForm;
 use App\Models\Suscriber;
 use Illuminate\Http\Request;
 use App\Mail\ContactFormThanks;
+use App\Mail\NewEventRegistration;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\EventRegistrationThanks;
 
 class WebsiteController extends Controller
 {
@@ -60,6 +62,34 @@ class WebsiteController extends Controller
 
     public function event(Event $event){
         return view('website.event', compact('event'));
+    }
+
+    public function submitEventRegistration(Request $request, Event $event){
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'nullable|numeric',
+            'company' => 'nullable',
+            'job_title' => 'nullable',
+        ]);
+
+        // Vamos a revisar si el correo electrónico ya está registrado en el evento
+        $registered = $event->registers()->where('email', $request->email)->first();
+        if($registered){
+            return redirect()->back()->withError('You have already registered for this event.');
+        }
+
+        $event->registers()->create($validated);
+
+        try{
+            Mail::to($request['email'])->send(new EventRegistrationThanks($request->name, $event->title));
+    
+            Mail::to(env('MAIL_TO_ADDRESS'))->send(new NewEventRegistration($request, $event));
+        }catch(\Exception $e){
+            return redirect()->back()->withError('An error occurred while sending the email.');
+        }
+
+        return redirect()->back()->with('success', 'You have successfully registered for the event.');
     }
 
     public function webinars(){

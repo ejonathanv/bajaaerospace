@@ -15,4 +15,10 @@ class Event extends Model
         'start_time' => 'datetime:H:i',
         'end_time' => 'datetime:H:i',
     ];
+
+    protected $guarded = [];
+
+    public function registers(){
+        return $this->hasMany(EventRegister::class);
+    }
 }

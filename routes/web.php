@@ -29,6 +29,7 @@ Route::get('articles-list/{article:slug}', [WebsiteController::class, 'article']
 Route::get('events-list', [WebsiteController::class, 'events'])->name('events');
 Route::get('events-list/{event:slug}', [WebsiteController::class, 'event'])->name('event');
 Route::get('events-list/{event:slug}/register', [WebsiteController::class, 'eventRegister'])->name('event.register');
+Route::post('events-list/{event:slug}/register', [WebsiteController::class, 'submitEventRegistration'])->name('submit-event-registration');
 Route::get('our-webinars', [WebsiteController::class, 'webinars'])->name('webinars');
 Route::get('our-webinars/register', [WebsiteController::class, 'webinarRegister'])->name('webinar.register');
 Route::post('our-webinars/register', [WebinarRegisterController::class, 'store'])->name('webinar.register.store');
@@ -45,6 +46,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], fu
     Route::get('delete-image/{image}', [PostImageController::class, 'deleteImage'])->name('delete-image');
     Route::resource('pages', PageController::class);
     Route::resource('events', EventController::class);
+    Route::post('events/{event}/download-registers', [EventController::class, 'download'])->name('download-event-list');
     Route::resource('subscribers', SuscriberController::class);
     Route::resource('members', MemberController::class)->except('store');
     Route::post('members/{member}/activate', [MemberController::class, 'activate'])->name('members.activate');

@@ -68,9 +68,9 @@ class WebsiteController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'phone' => 'nullable|numeric',
-            'company' => 'nullable',
-            'job_title' => 'nullable',
+            'phone' => 'required|numeric',
+            'company' => 'required|string',
+            'job_title' => 'required|string',
         ]);
 
         // Vamos a revisar si el correo electrónico ya está registrado en el evento

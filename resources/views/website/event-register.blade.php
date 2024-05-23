@@ -36,7 +36,7 @@
                         <label for="">
                             Full name <span class="text-red-600">*</span>
                         </label>
-                        <input type="text" class="form-control light" name="name" placeholder="What is your name?" required>
+                        <input type="text" class="form-control light" name="name" placeholder="What is your name?" required value="{{ old('name') }}">
                         @error('name')
                             <p class="text-red-600 text-sm mt-1">
                                 {{ $message }}
@@ -48,7 +48,7 @@
                         <label for="">
                             Email <span class="text-red-600">*</span>
                         </label>
-                        <input type="text" class="form-control light" name="email" placeholder="What is your email?" required>
+                        <input type="email" class="form-control light" name="email" placeholder="What is your email?" required value="{{ old('email') }}">
                         @error('email')
                             <p class="text-red-600 text-sm mt-1">
                                 {{ $message }}
@@ -58,9 +58,9 @@
 
                     <div class="form-group">
                         <label for="">
-                            Phone number (optional):
+                            Phone number <span class="text-red-600">*</span>
                         </label>
-                        <input type="text" class="form-control light" name="phone" placeholder="What is your phone number?">
+                        <input type="text" class="form-control light" name="phone" placeholder="What is your phone number?" required value="{{ old('phone') }}">
                         @error('phone')
                             <p class="text-red-600 text-sm mt-1">
                                 {{ $message }}
@@ -71,9 +71,9 @@
                     <div class="flex items-center space-x-5">
                         <div class="form-group flex-1">
                             <label for="">
-                                Company (optional):
+                                Company <span class="text-red-600">*</span>
                             </label>
-                            <input type="text" class="form-control light" name="company" placeholder="What is your company?">
+                            <input type="text" class="form-control light" name="company" placeholder="What is your company?" required value="{{ old('company') }}">
                             @error('company')
                                 <p class="text-red-600 text-sm mt-1">
                                     {{ $message }}
@@ -83,9 +83,9 @@
 
                         <div class="form-group flex-1">
                             <label for="">
-                                Job title (optional):
+                                Job title <span class="text-red-600">*</span>
                             </label>
-                            <input type="text" class="form-control light" name="job_title" placeholder="What is your job title?">
+                            <input type="text" class="form-control light" name="job_title" placeholder="What is your job title?" required value="{{ old('job_title') }}">
                             @error('job_title')
                                 <p class="text-red-600 text-sm mt-1">
                                     {{ $message }}

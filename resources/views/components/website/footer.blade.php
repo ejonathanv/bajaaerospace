@@ -100,4 +100,8 @@
             @enderror
         </div>
     </div>
+
+    <div id="occ-widget"></div>
+    <script id="bolsa-widget" type="text/javascript" charset="UTF-8"
+    src="https://jobdiscovery-widget-occ.occ.com.mx/button-bundle.js" key="1YwoNW0djZbC2sUrvuLFQmfxYJt"></script>
 </footer>

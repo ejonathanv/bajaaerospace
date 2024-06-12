@@ -5,14 +5,14 @@
                 @foreach($posts as $post)
                 <div class="w-1/3 p-3 mb-6">
                     <div class="bg-white rounded shadow h-full overflow-hidden">
-                        <a href="{{ route('post', $post->slug) }}">
+                        <a href="{{ route('new', $post->slug) }}">
                             <img src="{{ asset('posts/' . $post->cover) }}" alt="Post" class="w-full h-64 object-cover mb-3">
                         </a>
                         <div class="p-5">
                             <p>
                                 {{ \Carbon\Carbon::parse($post->created_at)->format('d/m/Y') }}
                             </p>
-                            <a href="{{ route('post', $post->slug) }}" class="hover:underline">
+                            <a href="{{ route('new', $post->slug) }}" class="hover:underline">
                                 <h4 class="!mb-3">
                                     {{ $post->title }}
                                 </h4>

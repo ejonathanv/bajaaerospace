@@ -7,7 +7,22 @@
 <ul>
     @foreach($other_posts as $post)
     <li>
-        <a href="{{ route('post', $post) }}" class="!block !mb-2">
+
+        @php
+            $category = $post->category;
+            $route = '';
+
+            if($category == 'post'){
+                $route = route('post', $post);
+            }elseif($category == 'news'){
+                $route = route('new', $post);
+            }elseif($category == 'education'){
+                $route = route('education.post', $post);
+            }
+
+        @endphp
+
+        <a href="{{ $route }}" class="!block !mb-2">
             <p class="!mb-2">
                 {{ $post->title }}
             </p>

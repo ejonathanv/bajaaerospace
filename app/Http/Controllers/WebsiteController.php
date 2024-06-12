@@ -31,7 +31,17 @@ class WebsiteController extends Controller
     }
 
     public function education(){
-        return view('website.education');
+        $posts = Post::where('category', 'education')->orderBy('created_at', 'desc')->paginate(3);
+        return view('website.education', compact('posts'));
+    }
+
+    public function educationPosts(){
+        $posts = Post::where('category', 'education')->orderBy('created_at', 'desc')->paginate(9);
+        return view('website.education-posts', compact('posts'));
+    }
+
+    public function members(){
+        return view('website.members');
     }
 
     public function blog(){

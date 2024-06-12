@@ -119,12 +119,53 @@
             <p class="text-center md:text-center text-lg md:text-xl mb-10">
                 "Explore the best of our school community through exciting videos and news that highlight achievements, events, and activities!"
             </p>
-            <div class="w-full md:w-3/4 mx-auto mb-10 md:mb-20">
+            <div class="w-full md:w-3/4 mx-auto">
                 <video class="w-full h-auto" controls>
                     <source src="{{ asset('img/education/video-education.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
+        </div>
+    </section>
+
+    <section class="py-10 md:py-24 bg-primary-100">
+        <div class="container">
+            @if($posts->count())
+            <div class="flex flex-wrap items-stretch -mx-3">
+                @foreach($posts as $post)
+                <div class="w-1/3 p-3">
+                    <div class="bg-primary-900 rounded shadow h-full overflow-hidden">
+                        <a href="{{ route('education.post', $post->slug) }}">
+                            <img src="{{ asset('posts/' . $post->cover) }}" alt="Post" class="w-full h-64 object-cover mb-3">
+                        </a>
+                        <div class="p-5 text-white">
+                            <p>
+                                {{ \Carbon\Carbon::parse($post->created_at)->format('d/m/Y') }}
+                            </p>
+                            <a href="{{ route('education.post', $post->slug) }}" class="hover:underline">
+                                <h4 class="!mb-3">
+                                    {{ $post->title }}
+                                </h4>
+                            </a>
+                            <p>
+                                {{ Str::limit($post->subtitle, 100) }}
+                            </p>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <div class="flex items-center justify-center">
+                <a href="{{ route('education-posts') }}" class="bg-white text-primary-900 font-bold py-2 px-4 rounded-full mt-10">
+                    View all posts
+                </a>
+            </div>
+            @else
+            <p class="text-center text-white">
+                No posts found.
+            </p>
+            @endif
         </div>
     </section>
 

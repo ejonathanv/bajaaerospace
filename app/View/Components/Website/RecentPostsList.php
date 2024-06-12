@@ -37,8 +37,11 @@ class RecentPostsList extends Component
                 ->get();
         }else{
 
+            $category = $this->current->category;
+
             return \App\Models\Post::where('id', '!=', $this->current->id)
                 ->orderBy('created_at', 'desc')
+                ->where('category', $category)
                 ->take(5)
                 ->get();
         }

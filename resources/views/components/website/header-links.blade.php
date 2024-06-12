@@ -8,6 +8,7 @@
                 <a href="{{ route('home') }}">Home</a>
                 <a href="{{ route('about') }}">About us</a>
                 <a href="{{ route('education') }}">Education</a> 
+                <a href="{{ route('members') }}">Members</a>
                 @foreach($pages as $page)
                 <a href="{{ route('page', $page->slug) }}">
                     {{ $page->name_on_navbar }}
@@ -44,6 +45,7 @@
             <a href="{{ route('home') }}">Home</a>
             <a href="{{ route('about') }}">About us</a>
             <a href="{{ route('education') }}">Education</a>
+            <a href="{{ route('members') }}">Members</a>
             @foreach($pages as $page)
             <a href="{{ route('page', $page->slug) }}">
                 {{ $page->name_on_navbar }}

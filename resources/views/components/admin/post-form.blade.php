@@ -87,6 +87,10 @@
                 <input type="radio" name="category_id" value="news" {{ $post ? $post->category === 'news' ? 'checked' : '' : '' }}>
                 News Aero
             </label>
+            <label>
+                <input type="radio" name="category_id" value="education" {{ $post ? $post->category === 'education' ? 'checked' : '' : '' }}>
+                Education
+            </label>
             <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
         </div>
 

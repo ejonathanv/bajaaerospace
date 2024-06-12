@@ -20,6 +20,8 @@ Route::get('/', [WebsiteController::class, 'index'])->name('home');
 Route::get('p/{page:slug}', [WebsiteController::class, 'page'])->name('page');
 Route::get('/about', [WebsiteController::class, 'about'])->name('about');
 Route::get('/education', [WebsiteController::class, 'education'])->name('education');
+Route::get('/education-posts', [WebsiteController::class, 'educationPosts'])->name('education-posts');
+Route::get('/education/{post:slug}', [WebsiteController::class, 'post'])->name('education.post');
 Route::get('blog', [WebsiteController::class, 'blog'])->name('blog');
 Route::get('blog/{post:slug}', [WebsiteController::class, 'post'])->name('post');
 Route::get('news-aero', [WebsiteController::class, 'news'])->name('news-aero');
@@ -38,6 +40,7 @@ Route::get('contact', [WebsiteController::class, 'contact'])->name('contact');
 Route::post('contact-form', [WebsiteController::class, 'contactForm'])->name('contact-form');
 Route::post('register-subscriber', [SuscriberController::class, 'store'])->name('register-subscriber');
 Route::post('store-member', [MemberController::class, 'store'])->name('store-member');
+Route::get('members', [WebsiteController::class, 'members'])->name('members');
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');

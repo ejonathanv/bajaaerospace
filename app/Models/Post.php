@@ -23,6 +23,9 @@ class Post extends Model
             case 'news':
                 return 'News Aero';
                 break;
+            case 'education':
+                return 'Education';
+                break;
             default :
                 return 'N/A';
                 break;

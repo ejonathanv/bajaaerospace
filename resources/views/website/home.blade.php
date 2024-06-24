@@ -2,6 +2,13 @@
     <x-website.quote></x-website.quote>
     <x-website.about-us-bar></x-website.about-us-bar>
     <x-website.segments></x-website.segments>
+    <section class="bg-gray-100 pb-20">
+        <div class="container">
+            <div class="w-9/12 mx-auto">
+                <img src="{{ asset('img/banners/dell_baja_aerospace_cluster.png') }}" alt="Dell Baja Aerospace Cluster" class="w-full h-auto shadow rounded">
+            </div>
+        </div>
+    </section>
     <x-website.model></x-website.model>
     <x-website.video></x-website.video>
     <x-website.leaderships></x-website.leaderships>

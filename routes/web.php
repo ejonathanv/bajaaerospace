@@ -22,6 +22,7 @@ Route::get('/about', [WebsiteController::class, 'about'])->name('about');
 Route::get('/education', [WebsiteController::class, 'education'])->name('education');
 Route::get('/education-posts', [WebsiteController::class, 'educationPosts'])->name('education-posts');
 Route::get('/education/{post:slug}', [WebsiteController::class, 'post'])->name('education.post');
+Route::post('/education/submit-talent-store', [WebsiteController::class, 'submitTalentStore'])->name('submit-talent-store');
 Route::get('blog', [WebsiteController::class, 'blog'])->name('blog');
 Route::get('blog/{post:slug}', [WebsiteController::class, 'post'])->name('post');
 Route::get('news-aero', [WebsiteController::class, 'news'])->name('news-aero');

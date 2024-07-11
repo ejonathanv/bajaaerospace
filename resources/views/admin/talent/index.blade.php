@@ -20,14 +20,6 @@
                         <h3 class="!m-0 flex-1">
                             Talent list
                         </h3>
-
-                        <div class="ml-auto">
-                            <form action="">
-                                <button class="btn btn-primary">
-                                    Download CSV
-                                </button>
-                            </form>
-                        </div>
                     </div>
                     <hr class="my-5">
                     @if(count($talents))

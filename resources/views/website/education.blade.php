@@ -411,8 +411,8 @@
                                     <textarea name="relevant_projects" id="relevant_projects" class="border-gray-300 rounded-md shadow-sm mt-1 w-full" x-model="form.relevant_projects" rows="6" placeholder="Type here..." spellcheck="false"></textarea>
                                 </div>
                                 <div>
-                                    <x-input-label for="attach_resume" value="Attach Resume (PDF, DOCX)" class="text-white font-bold" />
-                                    <label class="bg-primary-900 text-white font-bold py-2 px-4 rounded-md cursor-pointer flex items-center justify-center space-x-2">
+                                    <x-input-label value="Attach Resume (PDF, DOCX)" class="text-white font-bold mb-2" />
+                                    <label class="p-5 text-white font-bold rounded-md cursor-pointer flex items-center justify-center space-x-2 border-2 border-dashed border-white">
                                         <i class="fas fa-upload mr-2 fa-sm"></i>
                                         <span x-show="! form.attach_resume">Upload CV</span>
                                         <span x-show="form.attach_resume" x-text="form.attach_resume.name"></span>

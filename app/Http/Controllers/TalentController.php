@@ -13,7 +13,8 @@ class TalentController extends Controller
      */
     public function index()
     {
-        //
+        $talents = Talent::orderBy('created_at', 'desc')->paginate(7);
+        return view('admin.talent.index', compact('talents'));
     }
 
     /**
@@ -37,7 +38,7 @@ class TalentController extends Controller
      */
     public function show(Talent $talent)
     {
-        //
+        return view('admin.talent.show', compact('talent'));
     }
 
     /**

@@ -6,6 +6,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\TalentController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebinarController;
@@ -56,6 +57,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], fu
     Route::post('members/{member}/activate', [MemberController::class, 'activate'])->name('members.activate');
     Route::resource('webinars', WebinarController::class);
     Route::post('webinar/{webinar}/download-registers', [WebinarController::class, 'download'])->name('download');
+    Route::resource('talent', TalentController::class);
 });
 
 Route::middleware('auth')->group(function () {

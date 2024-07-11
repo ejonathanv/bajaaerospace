@@ -132,7 +132,7 @@
             @if($posts->count())
             <div class="flex flex-wrap items-stretch -mx-3">
                 @foreach($posts as $post)
-                <div class="w-1/3 p-3">
+                <div class="w-full md:w-1/3 p-3">
                     <div class="bg-primary-900 rounded shadow h-full overflow-hidden">
                         <a href="{{ route('education.post', $post->slug) }}">
                             <img src="{{ asset('posts/' . $post->cover) }}" alt="Post" class="w-full h-64 object-cover mb-3">
@@ -169,7 +169,7 @@
     </section>
     <!-- Talent form -->
     <section class="py-10 md:py-24 bg-white">
-        <div class="container flex items-center space-x-16" x-data="{
+        <div class="container flex flex-col md:flex-row items-center space-y-7 md:space-y-0 md:space-x-16" x-data="{
             step: 1,
             jumpingToNextStep: false,    
             form: {
@@ -248,7 +248,7 @@
                 });
             }
         }">
-            <div class="w-5/12">
+            <div class="w-full md:w-5/12">
                 <h1>
                     Are you a student passionate about the aerospace industry?
                 </h1>
@@ -256,8 +256,8 @@
                     We are looking for young talents with enthusiasm and creativity to join our mission of innovating in space and aviation. If you are studying aerospace engineering, applied sciences, or any related discipline, we would love to learn more about you and your skills.
                 </p>
             </div>
-            <div class="w-7/12">
-                <div class="bg-primary-100 rounded-lg shadow p-10">
+            <div class="w-full md:w-7/12">
+                <div class="bg-primary-100 rounded-lg shadow p-5 md:p-10">
                     <form action="" x-on:submit.prevent="nextStep()">
                         <!-- Step 1 -->
                         <div x-show="step == 1">
@@ -268,12 +268,12 @@
                                 </p>
                                 <div class="space-y-4">
                                     <!-- First name & Last name -->
-                                    <div class="flex items-start space-x-4">
-                                        <div class="w-1/2">
+                                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 items-start md:space-x-4">
+                                        <div class="w-full md:w-1/2">
                                             <x-input-label for="first_name" value="First Name" class="text-white font-bold" />
                                             <x-text-input class="block mt-1 w-full" type="text" name="first_name" x-model="form.first_name" required/>
                                         </div>
-                                        <div class="w-1/2">
+                                        <div class="w-full md:w-1/2">
                                             <x-input-label for="last_name" value="Last Name" class="text-white font-bold" />
                                             <x-text-input class="block mt-1 w-full" type="text" name="last_name" x-model="form.last_name" required/>
                                         </div>
@@ -284,23 +284,23 @@
                                         <x-text-input class="block mt-1 w-full" type="email" name="email" x-model="form.email" required/>
                                     </div>
                                     <!-- Phone & University -->
-                                    <div class="flex items-start space-x-4">
-                                        <div class="w-1/2">
+                                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0  items-start md:space-x-4">
+                                        <div class="w-full md:w-1/2">
                                             <x-input-label for="phone" value="Phone" class="text-white font-bold" />
                                             <x-text-input class="block mt-1 w-full" type="number" name="phone" x-model="form.phone" required/>
                                         </div>
-                                        <div class="w-1/2">
+                                        <div class="w-full md:w-1/2">
                                             <x-input-label for="university" value="University" class="text-white font-bold" />
                                             <x-text-input class="block mt-1 w-full" type="text" name="university" x-model="form.university" required/>
                                         </div>
                                     </div>
                                     <!-- Carrer & Academic Level -->
-                                    <div class="flex items-start space-x-4">
-                                        <div class="w-1/2">
+                                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 items-start md:space-x-4">
+                                        <div class="w-full md:w-1/2">
                                             <x-input-label for="career" value="Career" class="text-white font-bold" />
                                             <x-text-input class="block mt-1 w-full" type="text" name="career" x-model="form.career" required/>
                                         </div>
-                                        <div class="w-1/2">
+                                        <div class="w-full md:w-1/2">
                                             <x-input-label for="academic_level" value="Academic Level" class="text-white font-bold" />
                                             <select name="academic_level" id="academic_level" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 w-full" x-model="form.academic_level" required>
                                                 <option value="" disabled selected>Select an option</option>

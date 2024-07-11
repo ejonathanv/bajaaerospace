@@ -29,7 +29,7 @@ class TalentFormRequest extends FormRequest
             'university' => 'required|string|max:255',
             'career' => 'required|string|max:255',
             'academic_level' => 'required|string|max:255',
-            'relevant_projects' => 'required|string|max:255',
+            'relevant_projects' => 'required|string',
             'attach_resume' => 'required|file|max:5000'
         ];
     }

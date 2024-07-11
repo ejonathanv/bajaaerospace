@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('university');
             $table->string('career');
             $table->string('academic_level');
-            $table->string('relevant_projects');
+            $table->text('relevant_projects');
             $table->string('attach_resume');
             $table->text('skills');
             $table->timestamps();

@@ -22,25 +22,51 @@
                             <label for="">
                                 Full name:
                             </label>
-                            <input type="text" class="form-control light" name="name" placeholder="What is your name?" required>
+                            <input type="text" 
+                                class="form-control light" 
+                                name="name" 
+                                placeholder="What is your name?" 
+                                vaue="{{ old('name') }}"
+                                required>
+                            @error('name')
+                                <p class="text-red-500 text-sm">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="">
                                 Email:
                             </label>
-                            <input type="text" class="form-control light" name="email" placeholder="What is your email?" required>
+                            <input type="text" 
+                                class="form-control light" 
+                                name="email" 
+                                placeholder="What is your email?" 
+                                value="{{ old('email') }}"
+                                required>
+                            @error('email')
+                                <p class="text-red-500 text-sm">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="">
                                 Phone number (optional):
                             </label>
-                            <input type="text" class="form-control light" name="phone" placeholder="What is your phone number?">
+                            <input type="number" 
+                                class="form-control light" 
+                                name="phone" 
+                                value="{{ old('phone') }}"
+                                placeholder="What is your phone number?">
+                            @error('phone')
+                                <p class="text-red-500 text-sm">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="">
                                 Message:
                             </label>
-                            <textarea name="message" id="" cols="30" rows="3" class="form-control light" placeholder="Enter your message here" required></textarea>
+                            <textarea name="message" id="" cols="30" rows="3" class="form-control light" placeholder="Enter your message here" required>{{ old('message') }}</textarea>
+                            @error('message')
+                                <p class="text-red-500 text-sm">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label>

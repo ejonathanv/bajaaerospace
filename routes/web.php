@@ -38,10 +38,10 @@ Route::get('our-webinars', [WebsiteController::class, 'webinars'])->name('webina
 Route::get('our-webinars/register', [WebsiteController::class, 'webinarRegister'])->name('webinar.register');
 Route::post('our-webinars/register', [WebinarRegisterController::class, 'store'])->name('webinar.register.store');
 Route::get('our-webinars/success-register', [WebsiteController::class, 'webinarSuccessRegister'])->name('webinars-success-register');
-Route::get('contact', [WebsiteController::class, 'contact'])->name('contact');
-Route::post('contact-form', [WebsiteController::class, 'contactForm'])->name('contact-form');
-Route::post('register-subscriber', [SuscriberController::class, 'store'])->name('register-subscriber');
-Route::post('store-member', [MemberController::class, 'store'])->name('store-member');
+Route::get('contact-us', [WebsiteController::class, 'contact'])->name('contact');
+Route::post('submit-contact-form', [WebsiteController::class, 'contactForm'])->name('contact-form');
+Route::post('submit-new-subscribet', [SuscriberController::class, 'store'])->name('register-subscriber');
+Route::post('submit-new-member', [MemberController::class, 'store'])->name('store-member');
 Route::get('members', [WebsiteController::class, 'members'])->name('members');
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], function() {
@@ -53,8 +53,10 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], fu
     Route::resource('events', EventController::class);
     Route::post('events/{event}/download-registers', [EventController::class, 'download'])->name('download-event-list');
     Route::resource('subscribers', SuscriberController::class);
+    Route::post('subscribers/download-subscribers', [SuscriberController::class, 'download'])->name('download-subscribers');
     Route::resource('members', MemberController::class)->except('store');
     Route::post('members/{member}/activate', [MemberController::class, 'activate'])->name('members.activate');
+    Route::post('members/download-members', [MemberController::class, 'download'])->name('download-members');
     Route::resource('webinars', WebinarController::class);
     Route::post('webinar/{webinar}/download-registers', [WebinarController::class, 'download'])->name('download');
     Route::resource('talent', TalentController::class);

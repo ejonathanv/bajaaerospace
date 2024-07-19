@@ -22,8 +22,9 @@
                         </h3>
 
                         <div class="ml-auto">
-                            <form action="">
-                                <button class="btn btn-primary">
+                            <form action="{{ route('download-subscribers') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-primary">
                                     Download CSV
                                 </button>
                             </form>
@@ -32,32 +33,36 @@
                     <hr class="my-5">
                     @if(count($subscribers))
                         @foreach($subscribers as $subscriber)
-                        <div class="flex items-center justify-between w-full">
-                            <div>
-                                <p class="!m-0 font-bold text-lg">
-                                    {{ $subscriber->name }}
-                                </p>
-                                <p class="text-gray-500 !m-0">
-                                    {{ $subscriber->email }}
-                                </p>
-                                @if($subscriber->phone)
-                                <p class="text-gray-500 !m-0">
-                                    {{ $subscriber->phone }}
-                                </p>
-                                @endif
+                            <div class="flex items-center justify-between w-full">
+                                <div>
+                                    <p class="!m-0 font-bold text-lg">
+                                        {{ $subscriber->name }}
+                                    </p>
+                                    <p class="text-gray-500 !m-0">
+                                        {{ $subscriber->email }}
+                                    </p>
+                                    @if($subscriber->phone)
+                                    <p class="text-gray-500 !m-0">
+                                        {{ $subscriber->phone }}
+                                    </p>
+                                    @endif
+                                </div>
+                                <div>
+                                    <form action="{{ route('subscribers.destroy', $subscriber) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this subscriber?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger text-red-500">
+                                            Delete
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
-                            <div>
-                                <form action="{{ route('subscribers.destroy', $subscriber) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this subscriber?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger text-red-500">
-                                        Delete
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                        <hr class="my-5">
+                            <hr class="my-5">
                         @endforeach
+
+                        <div class="mt-5">
+                            {{ $subscribers->links() }}
+                        </div>
                     @else
                         <p class="text-sm !m-0">
                             There are no subscribers yet.

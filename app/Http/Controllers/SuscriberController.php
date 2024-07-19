@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Suscriber;
 use App\Mail\NewSubscriber;
+use Illuminate\Support\Str;
+use App\Exports\SubscribersExport;
 use App\Mail\ThankYouForSubscribing;
 use Illuminate\Support\Facades\Mail;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StoreSuscriberRequest;
 use App\Http\Requests\UpdateSuscriberRequest;
 
@@ -16,7 +19,7 @@ class SuscriberController extends Controller
      */
     public function index()
     {
-        $subscribers = Suscriber::latest()->paginate(30);
+        $subscribers = Suscriber::latest()->paginate(9);
         return view('admin.subscribers.index', compact('subscribers'));
     }
 
@@ -75,5 +78,10 @@ class SuscriberController extends Controller
     {
         $subscriber->delete();
         return redirect()->back()->with('success', 'Suscriber deleted');
+    }
+
+    public function download(){
+        $fileName = Str::slug('Baja Aerospace Cluster Subscribers List', '-').'.xlsx';
+        return Excel::download(new SubscribersExport(), $fileName); 
     }
 }

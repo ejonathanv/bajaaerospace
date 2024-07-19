@@ -17,6 +17,7 @@
                     @endif
 
                     <form action="{{ route('contact-form') }}" method="POST" onsubmit="this.querySelector('button').disabled = true">
+                        @honeypot
                         @csrf
                         <div class="form-group">
                             <label for="">

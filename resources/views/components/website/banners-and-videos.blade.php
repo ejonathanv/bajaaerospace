@@ -14,6 +14,7 @@
                 type="text/html"
                 src="https://www.youtube.com/embed/TKx15AWC9ks?autoplay=1"
                 frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen />
         </div>
         <div class="w-full md:w-2/12 flex flex-col space-y-3 hidden md:block">

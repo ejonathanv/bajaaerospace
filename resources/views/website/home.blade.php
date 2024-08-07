@@ -1,6 +1,7 @@
 <x-guest-layout title="Bienvenidos">
     <x-website.quote></x-website.quote>
     <x-website.about-us-bar></x-website.about-us-bar>
+    <x-website.banners-and-videos></x-website.banners-and-videos>
     <x-website.segments></x-website.segments>
     <x-website.adds></x-website.adds>
     <x-website.model></x-website.model>

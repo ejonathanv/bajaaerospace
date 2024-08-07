@@ -294,3 +294,60 @@ p{
     width: 100px;
     height: 135px;
 }
+
+
+.bannerVertical{
+    @apply bg-center bg-cover bg-no-repeat bg-gray-200 shadow-md rounded relative;
+    width: 100%;
+    height: 483px;
+}
+.bannerVertical:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @apply bg-white opacity-75;
+}
+.bannerVertical span{
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-primary-900 font-bold text-xl whitespace-nowrap text-center;
+}
+
+.videoContainer{
+    @apply bg-center bg-cover bg-no-repeat bg-gray-200 shadow-md rounded;
+    width: 640px;
+    height: 480px;
+}
+
+.bannerSquare{
+    @apply bg-center bg-cover bg-no-repeat bg-gray-200 shadow-md rounded relative;
+    width: 100%;
+    height: 237px;
+}
+
+.bannerSquare:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @apply bg-white opacity-75;
+}
+
+.bannerSquare span{
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-primary-900 font-bold text-xl whitespace-nowrap text-center;
+}
+
+@media screen and (max-width: 768px){
+    .bannerVertical{
+        height: 364px;
+    }
+    .bannerSquare{
+        height: 178px;
+    }
+    .bannerVertical span, .bannerSquare span{
+        @apply text-sm;
+    }
+}

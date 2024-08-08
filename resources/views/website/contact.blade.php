@@ -81,6 +81,15 @@
                                 I want to receive the newsletter
                             </label>
                         </div>
+
+                        <div class="form-group">
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+                            @error('g-recaptcha-response')
+                                <p class="text-red-500 text-sm">{{ $message }}</p>
+                            @enderror
+                        </div>
+
                         <button type="submit" class="btn btn-primary disabled:opacity-50">
                             Send message
                         </button>

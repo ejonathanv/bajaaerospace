@@ -124,6 +124,7 @@ class WebsiteController extends Controller
             'phone' => 'nullable|numeric',
             'message' => 'required',
             'terms' => 'required|accepted',
+            'g-recaptcha-response' => 'required|captcha'
         ]);
         if($request->newsletter){
             $subscriber = Suscriber::firstOrCreate([

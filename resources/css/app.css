@@ -351,3 +351,19 @@ p{
         @apply text-sm;
     }
 }
+
+.videoPlayerList{
+    max-height: 455px;
+    padding: 10px;
+    background-color: #e6e6e6;
+    @apply rounded;
+    box-shadow: inset 0 0 10px rgba(0,0,0,.2);
+}
+
+.videoThumb{
+    @apply bg-center bg-cover bg-no-repeat shadow-md cursor-pointer;
+    width: 100%;
+    height: 143px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}

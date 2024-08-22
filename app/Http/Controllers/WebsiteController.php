@@ -90,8 +90,7 @@ class WebsiteController extends Controller
     }
     public function webinars(){
         $webinar = Webinar::where('published', true)->latest()->first();
-        $last_webinar = Webinar::where('published', true)->latest()->skip(1)->first();
-        return view('website.webinars', compact('webinar', 'last_webinar')); 
+        return view('website.webinars', compact('webinar')); 
     }
     public function webinarRegister(){
         $webinar = Webinar::where('published', true)->latest()->first();

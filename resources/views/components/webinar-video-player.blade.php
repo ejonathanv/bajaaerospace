@@ -6,7 +6,7 @@
             </h2>
 
             <!-- VIDEO DE YOUTUBE -->
-            <div class="flex flex-col md:flex-row md:items-stretch space-y-10 md:space-x-10" x-data="{
+            <div class="flex flex-col md:flex-row md:items-stretch space-y-10 md:space-y-0 md:space-x-10" x-data="{
                 currentVideo: '{{ $last_webinar->video }}',
                 getWebinar(webinar_id){
                     this.currentVideo = webinar_id;

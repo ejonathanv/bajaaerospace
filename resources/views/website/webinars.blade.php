@@ -36,7 +36,7 @@
                         <!-- LINK PARA REGISTRO AL WEBINAR -->
                         <a href="{{ route('webinar.register') }}" class="btn btn-primary w-full text-center">
                             <i class="fas fa-calendar-alt mr-2"></i>
-                            Subscribe to this event
+                            Register to this event
                         </a>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                 </div>
             @endif
 
-            <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 items-center md:space-x-16 my-10">
+            <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 items-center md:space-x-16 mt-20">
                 <div class="w-full md:w-9/12 text-center md:text-left">
                     <h2>Subscribe to Our Channel</h2>
                     <p class="text-2xl mt-6">

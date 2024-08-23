@@ -93,11 +93,11 @@
                     class="inline-block">
                     <img src="{{ asset('img/svg/facebook.svg') }}" alt="Facebook" class="w-24 h-auto">
                 </a>
-                <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp" target="_blank">
+                <a href="https://www.facebook.com/BajaAerospaceMX?mibextid=ZbWKwL" target="_blank">
                     <img src="{{ asset('img/svg/live.svg') }}" alt="Live" class="w-36 h-auto">
                 </a>
                 <div>
-                    <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp" target="_blank">
+                    <a href="https://www.facebook.com/BajaAerospaceMX?mibextid=ZbWKwL" target="_blank">
                     <img src="{{ asset('img/svg/followus.svg') }}" alt="Follow us" class="w-36 h-auto">
                     </a>
                 </div>

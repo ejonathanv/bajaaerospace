@@ -1,7 +1,7 @@
 @if($last_webinar)
     @if($last_webinar->video)
         <div class="mt-16">
-            <h2 class="text-2xl font-bold">
+            <h2 class="text-2xl font-bold text-center md:text-left">
                 Out latest webinar
             </h2>
 

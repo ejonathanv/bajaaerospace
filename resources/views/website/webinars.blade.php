@@ -27,29 +27,58 @@
                 Register for this week's webinar
             </h3>
             @if($webinar)
-            <!-- IMAGEN DINAMICA POR WEBINAR -->
-            <div class="webinar-info flex flex-col md:flex-row items-center space-y-7 md:space-y-0 md:space-x-7 mt-7 md:mt-16">
-                <div class="basis-full md:basis-9/12">
-                    <img src="{{ asset('webinars/' . $webinar->flyer) }}" alt="" class="w-full h-auto">
+                <!-- IMAGEN DINAMICA POR WEBINAR -->
+                <div class="webinar-info flex flex-col md:flex-row items-center space-y-7 md:space-y-0 md:space-x-7 mt-7 md:mt-16">
+                    <div class="basis-full md:basis-9/12">
+                        <img src="{{ asset('webinars/' . $webinar->flyer) }}" alt="" class="w-full h-auto">
+                    </div>
+                    <div class="basis-full md:basis-3/12">
+                        <!-- LINK PARA REGISTRO AL WEBINAR -->
+                        <a href="{{ route('webinar.register') }}" class="btn btn-primary w-full text-center">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Subscribe to this event
+                        </a>
+                    </div>
                 </div>
-                <div class="basis-full md:basis-3/12">
-                    <!-- LINK PARA REGISTRO AL WEBINAR -->
-                    <a href="{{ route('webinar.register') }}" class="btn btn-primary w-full text-center">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        Subscribe to this event
+            @else
+                <div class="mt-16">
+                    <h2 class="text-2xl font-bold">
+                        Our next webinar
+                    </h2>
+                    <p class="text-gray-500 text-sm">
+                        We don't have any webinar scheduled yet.
+                    </p>
+                </div>
+            @endif
+
+            <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 items-center md:space-x-16 my-10">
+                <div class="w-full md:w-9/12 text-center md:text-left">
+                    <h2>Subscribe to Our Channel</h2>
+                    <p class="text-2xl mt-6">
+                        Subscribe to our YouTube channel and never miss a webinar!
+                    </p>
+                </div>
+                <div class="w-full md:w-3/12 flex items-center justify-center space-x-10">
+                    <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp">
+                        <img src="{{ asset('img/svg/bell.svg') }}" alt="" class="w-16 h-auto">
+                    </a>
+                    <img src="{{ asset('img/svg/youtubeIcon.svg') }}" alt="" class="w-16 h-auto">
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-center md:space-x-16">
+                <div class="w-full md:w-6/12 text-center md:text-left">
+                    <h3 class="m-0">
+                        Explore all our webinars on YouTube
+                    </h3>
+                </div>
+                <div class="w-full md:w-2/12 flex items-center justify-center">
+                    <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp">
+                        <img src="{{ asset('img/svg/subscribe.svg') }}" alt="" class="w-36 h-auto">
                     </a>
                 </div>
             </div>
-            @else
-            <div class="mt-16">
-                <h2 class="text-2xl font-bold">
-                    Our next webinar
-                </h2>
-                <p class="text-gray-500 text-sm">
-                    We don't have any webinar scheduled yet.
-                </p>
-            </div>
-            @endif
+
             <x-webinar-video-player />
 
             <h2 class="text-center text-2xl mt-10">

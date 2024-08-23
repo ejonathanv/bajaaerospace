@@ -59,10 +59,12 @@
                     </p>
                 </div>
                 <div class="w-full md:w-3/12 flex items-center justify-center space-x-10">
-                    <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp">
+                    <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp" target="_blank">
                         <img src="{{ asset('img/svg/bell.svg') }}" alt="" class="w-16 h-auto">
                     </a>
-                    <img src="{{ asset('img/svg/youtubeIcon.svg') }}" alt="" class="w-16 h-auto">
+                    <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp" target="_blank">
+                        <img src="{{ asset('img/svg/youtubeIcon.svg') }}" alt="" class="w-16 h-auto">
+                    </a>
                 </div>
             </div>
 
@@ -73,7 +75,7 @@
                     </h3>
                 </div>
                 <div class="w-full md:w-2/12 flex items-center justify-center">
-                    <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp">
+                    <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp" target="_blank">
                         <img src="{{ asset('img/svg/subscribe.svg') }}" alt="" class="w-36 h-auto">
                     </a>
                 </div>
@@ -91,11 +93,13 @@
                     class="inline-block">
                     <img src="{{ asset('img/svg/facebook.svg') }}" alt="Facebook" class="w-24 h-auto">
                 </a>
-                <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp">
+                <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp" target="_blank">
                     <img src="{{ asset('img/svg/live.svg') }}" alt="Live" class="w-36 h-auto">
                 </a>
                 <div>
+                    <a href="https://youtube.com/@bajaaerospacecluster3720?si=l9CXUY2Mtiqn-pSp" target="_blank">
                     <img src="{{ asset('img/svg/followus.svg') }}" alt="Follow us" class="w-36 h-auto">
+                    </a>
                 </div>
             </div>
         </div>

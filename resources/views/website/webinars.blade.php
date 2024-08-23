@@ -51,7 +51,7 @@
                 </div>
             @endif
 
-            <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 items-center md:space-x-16 mt-24">
+            <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 items-center md:space-x-16 mt-16 pt-10">
                 <div class="w-full md:w-9/12 text-center md:text-left">
                     <h2>Subscribe to Our Channel</h2>
                     <p class="text-2xl mt-6">

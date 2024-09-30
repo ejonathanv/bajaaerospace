@@ -16,7 +16,7 @@
         <!-- Scripts -->
         <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
         <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-        <script src="https://kit.fontawesome.com/133291f590.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/1b2e97ddb1.js" crossorigin="anonymous"></script>
         <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])

@@ -9,6 +9,7 @@
     <x-website.leaderships></x-website.leaderships>
     <x-website.stats></x-website.stats>
     <x-website.recent-posts></x-website.recent-posts>
+    <x-website.recent-video-posts></x-website.recent-video-posts>
     <x-website.events></x-website.events>
     <x-website.supporting-base></x-website.supporting-base>
 </x-guest-layout>

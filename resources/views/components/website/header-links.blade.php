@@ -18,6 +18,7 @@
                 <a href="{{ route('webinars') }}">Webinars</a>
                 <a href="{{ route('news-aero') }}">News Aero</a>
                 <a href="{{ route('blog') }}">Blog</a>
+                <a href="{{ route('video-blog') }}">Videos</a>
                 <a href="{{ route('articles') }}">Articles</a>
                 <a href="{{ route('contact') }}">Contact us</a>
             </nav>
@@ -54,6 +55,7 @@
             <a href="{{ route('events') }}">Events</a>
             <a href="{{ route('webinars') }}">Webinars</a>
             <a href="{{ route('blog') }}">Blog</a>
+            <a href="{{ route('video-blog') }}">Videos</a>
             <a href="{{ route('articles') }}">Articles</a>
             <a href="{{ route('contact') }}">Contact us</a>
         </nav>

@@ -10,6 +10,7 @@
                     </a>
                 </div>
 
+                
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -17,6 +18,7 @@
                     </x-nav-link>
                 </div>
 
+                {{--
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('pages.index')" :active="request()->routeIs('pages*')">
                         {{ __('Pages') }}
@@ -64,6 +66,72 @@
                         {{ __('Talent') }}
                     </x-nav-link>
                 </div>
+                --}}
+            </div>
+
+
+            <!-- Menu de navegacion -->
+            <div class="hidden sm:flex sm:items-center sm:ml-auto">
+                <x-dropdown align="right" width="48">
+                    <x-slot name="trigger">
+                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                            <div>Menu</div>
+
+                            <div class="ml-1">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+                    </x-slot>
+
+                    <x-slot name="content">
+                        <!-- Pages -->
+                        <x-dropdown-link :href="route('pages.index')">
+                            {{ __('Pages') }}
+                        </x-dropdown-link>
+
+                        <!-- Posts -->
+                        <x-dropdown-link :href="route('posts.index')">
+                            {{ __('Posts') }}
+                        </x-dropdown-link>
+
+                        <!-- Events -->
+                        <x-dropdown-link :href="route('events.index')">
+                            {{ __('Events') }}
+                        </x-dropdown-link>
+
+                        <!-- Webinars -->
+                        <x-dropdown-link :href="route('webinars.index')">
+                            {{ __('Webinars') }}
+                        </x-dropdown-link>
+
+                        <!-- Articles -->
+                        <x-dropdown-link :href="route('articles.index')">
+                            {{ __('Articles') }}
+                        </x-dropdown-link>
+
+                        <!-- Suscribers -->
+                        <x-dropdown-link :href="route('subscribers.index')">
+                            {{ __('Suscribers') }}
+                        </x-dropdown-link>
+
+                        <!-- Members -->
+                        <x-dropdown-link :href="route('members.index')">
+                            {{ __('Members') }}
+                        </x-dropdown-link>
+
+                        <!-- Talent -->
+                        <x-dropdown-link :href="route('talent.index')">
+                            {{ __('Talent') }}
+                        </x-dropdown-link>
+
+                        <!-- Video Posts -->
+                        <x-dropdown-link :href="route('video-posts.index')">
+                            {{ __('Video Posts') }}
+                        </x-dropdown-link>
+                    </x-slot>
+                </x-dropdown>
             </div>
 
             <!-- Settings Dropdown -->

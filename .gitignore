@@ -9,6 +9,7 @@
 /public/pages
 /public/events
 /public/webinars
+/public/videoCovers
 /storage/*.key
 /vendor
 .env

@@ -14,6 +14,7 @@ use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostImageController;
 use App\Http\Controllers\SuscriberController;
+use App\Http\Controllers\VideoPostController;
 use App\Http\Controllers\WebinarRegisterController;
 
 
@@ -26,6 +27,8 @@ Route::get('/education/{post:slug}', [WebsiteController::class, 'post'])->name('
 Route::post('/education/submit-talent-store', [WebsiteController::class, 'submitTalentStore'])->name('submit-talent-store');
 Route::get('blog', [WebsiteController::class, 'blog'])->name('blog');
 Route::get('blog/{post:slug}', [WebsiteController::class, 'post'])->name('post');
+Route::get('video-blog', [WebsiteController::class, 'videoBlog'])->name('video-blog');
+Route::get('video-blog/{video:slug}', [WebsiteController::class, 'videoPost'])->name('video-post');
 Route::get('news-aero', [WebsiteController::class, 'news'])->name('news-aero');
 Route::get('news-aero/{post:slug}', [WebsiteController::class, 'post'])->name('new');
 Route::get('articles-list', [WebsiteController::class, 'articles'])->name('articles');
@@ -60,6 +63,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], fu
     Route::resource('webinars', WebinarController::class);
     Route::post('webinar/{webinar}/download-registers', [WebinarController::class, 'download'])->name('download');
     Route::resource('talent', TalentController::class);
+    Route::resource('video-posts', VideoPostController::class)->parameters(['video-posts' => 'video']);
 });
 
 Route::middleware('auth')->group(function () {

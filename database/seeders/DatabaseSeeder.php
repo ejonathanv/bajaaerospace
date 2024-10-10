@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             SuscriberSeeder::class,
             EventSeeder::class,
             ArticleSeeder::class,
+            VideoPostSeeder::class,
         ]);
     }
 }

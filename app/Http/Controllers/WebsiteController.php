@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Webinar;
 use App\Mail\ContactForm;
 use App\Models\Suscriber;
+use App\Models\VideoPost;
 use Illuminate\Http\Request;
 use App\Providers\StoreTalent;
 use App\Mail\ContactFormThanks;
@@ -45,6 +46,10 @@ class WebsiteController extends Controller
     public function blog(){
         $posts = Post::orderBy('created_at', 'desc')->where('category', 'posts')->paginate(9);
         return view('website.blog', compact('posts'));
+    }
+    public function videoBlog(){
+        $videos = VideoPost::orderBy('created_at', 'desc')->where('is_published', true)->paginate(0);
+        return view('website.video-blog', compact('videos'));
     }
     public function articles(){
         $articles = Article::orderBy('created_at', 'desc')->get();
@@ -107,6 +112,9 @@ class WebsiteController extends Controller
         $title = $post->title;
         $subtitle = $post->subtitle;
         return view('website.post', compact('post', 'title', 'subtitle'));
+    }
+    public function videoPost(VideoPost $video){
+        return view('website.video-post', compact('video'));
     }
     public function new(Post $post){
         $title = $post->title;

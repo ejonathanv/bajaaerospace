@@ -1,0 +1,103 @@
+---
+alwaysApply: true
+---
+# Modulo de Vacantes
+
+# RULE: Estructura
+- El módulo se llama "Vacantes".
+- Crear un modelo: `Vacante`.
+- Crear un controlador: `VacanteController`.
+- Crear un request: `StoreVacanteRequest` y `UpdateVacanteRequest`.
+- Crear vistas en: `resources/views/vacantes/` (index, show, create, edit).
+- Crear migración: `create_vacantes_table`.
+- Crear rutas tanto para `web.php` (públicas) como `admin.php` (privadas).
+- El admin solo puede crear, editar, eliminar o desactivar vacantes.
+- El público solo puede ver vacantes activas.
+
+# RULE: Migración
+- Tabla: `vacantes`
+- Campos obligatorios:
+  - titulo (string, required)
+  - empresa (string, nullable)
+  - ubicacion (string, nullable)
+  - tipo (string, nullable)
+  - sueldo (float)
+  - contacto (string, nullable)
+  - descripcion (text, nullable)
+  - flyer (string, nullable)
+  - activa (boolean, default true)
+  - timestamps
+- Asegurar índices básicos si hay filtrado frecuente por tipo o ubicación.
+
+# RULE: Modelo
+- Usar namespace: `App\Models`
+- Usar `$fillable` para todos los campos editables.
+- Implementar `scopeActivas()` para filtrar vacantes activas.
+- Si existe `SoftDeletes` en el proyecto, incluirlo.
+
+# RULE: Controlador
+- Namespace: `App\Http\Controllers`
+- Métodos públicos:
+  - index() → listar vacantes activas (público)
+  - show($id) → mostrar detalle de vacante
+  - adminIndex() → listar todas (admin)
+  - create(), store(), edit(), update(), destroy() → CRUD (solo admin)
+- Usar `StoreVacanteRequest` y `UpdateVacanteRequest` para validaciones.
+- En el método store/update, manejar upload de `flyer` con public_path() en la carpeta vacantesFlyers (Crearla si no existe)
+- Si el campo `flyer` cambia, eliminar el archivo anterior.
+
+# RULE: Validaciones
+En StoreVacanteRequest y UpdateVacanteRequest incluir:
+
+'titulo' => 'required|string|max:255',
+'empresa' => 'nullable|string|max:255',
+'ubicacion' => 'nullable|string|max:255',
+'tipo' => 'nullable|string|max:100',
+'sueldo' => 'nullable', (y que sea numerico)
+'contacto' => 'nullable|string|max:255',
+'descripcion' => 'nullable|string',
+'flyer' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+'activa' => 'boolean',
+
+# RULE: Vistas
+- `index.blade.php`: Mostrar grid de vacantes activas (imagen, título, empresa, ubicación, botón "Ver más").
+- `show.blade.php`: Mostrar detalle de la vacante con botón "Postularme" o “Contactar”.
+- `create/edit.blade.php`: Formularios sencillos con los campos del modelo.
+- Validar errores con `@error`.
+- Usar `@csrf` en formularios.
+- No agregar JavaScript innecesario; priorizar funcionalidad pura.
+
+# RULE: Rutas
+// Rutas públicas
+Route::get('/vacantes', [VacanteController::class, 'index'])->name('vacantes.index');
+Route::get('/vacantes/{id}', [VacanteController::class, 'show'])->name('vacantes.show');
+
+// Rutas admin (protegidas con middleware auth)
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function() {
+    Route::get('/vacantes', [VacanteController::class, 'adminIndex'])->name('admin.vacantes.index');
+    Route::get('/vacantes/create', [VacanteController::class, 'create'])->name('admin.vacantes.create');
+    Route::post('/vacantes', [VacanteController::class, 'store'])->name('admin.vacantes.store');
+    Route::get('/vacantes/{id}/edit', [VacanteController::class, 'edit'])->name('admin.vacantes.edit');
+    Route::put('/vacantes/{id}', [VacanteController::class, 'update'])->name('admin.vacantes.update');
+    Route::delete('/vacantes/{id}', [VacanteController::class, 'destroy'])->name('admin.vacantes.destroy');
+});
+
+# RULE: Estándares
+- Todo el código debe seguir PSR-12.
+- Usar nombres en singular para modelos y controladores.
+- Los métodos deben tener docblocks descriptivos.
+- Usar Eloquent Query Scopes antes de raw queries.
+- No usar librerías externas salvo que sean necesarias.
+- Toda imagen se guarda en `/public/vacantesFlyers`.
+- Usar `asset('vacantesFlyers...')` para mostrar imágenes.
+
+# RULE: Extensión futura
+- Agregar tabla `postulaciones` (para recibir CVs o mensajes).
+- Implementar notificación al admin cuando se publique una nueva vacante.
+- Crear componente Livewire o Vue.js para filtrado dinámico (ubicación / tipo).
+
+
+
+
+
+

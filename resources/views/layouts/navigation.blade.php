@@ -130,6 +130,11 @@
                         <x-dropdown-link :href="route('video-posts.index')">
                             {{ __('Video Posts') }}
                         </x-dropdown-link>
+
+                        <!-- Jobs -->
+                        <x-dropdown-link :href="route('dashboard.vacantes.index')">
+                            {{ __('Vacantes') }}
+                        </x-dropdown-link>
                     </x-slot>
                 </x-dropdown>
             </div>

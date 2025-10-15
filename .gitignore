@@ -10,6 +10,7 @@
 /public/events
 /public/webinars
 /public/videoCovers
+/public/vacantesFlyers
 /storage/*.key
 /vendor
 .env

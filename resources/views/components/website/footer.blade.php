@@ -12,12 +12,13 @@
             </h3>
 
             <nav class="text-white flex flex-col space-y-2 text-sm font-bold">
-                <a href="#">Home</a>
+                <a href="{{ route('home') }}">Home</a>
                 <a href="#">Cluster BC</a>
-                <a href="#">Events</a>
-                <a href="#">Articles</a>
-                <a href="#">Webinars</a>
-                <a href="#">Contact</a>
+                <a href="{{ route('events') }}">Events</a>
+                <a href="{{ route('articles') }}">Articles</a>
+                <a href="{{ route('webinars') }}">Webinars</a>
+                <a href="{{ route('vacantes.index') }}">Jobs</a>
+                <a href="{{ route('contact') }}">Contact</a>
                 <a href="#">Policies</a>
                 <a href="{{ route('login') }}">Login</a>
             </nav>

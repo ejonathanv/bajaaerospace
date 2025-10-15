@@ -15,6 +15,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostImageController;
 use App\Http\Controllers\SuscriberController;
 use App\Http\Controllers\VideoPostController;
+use App\Http\Controllers\VacanteController;
 use App\Http\Controllers\WebinarRegisterController;
 
 
@@ -47,6 +48,10 @@ Route::post('submit-new-subscribet', [SuscriberController::class, 'store'])->nam
 Route::post('submit-new-member', [MemberController::class, 'store'])->name('store-member');
 Route::get('members', [WebsiteController::class, 'members'])->name('members');
 
+// Rutas públicas de vacantes
+Route::get('vacantes', [VacanteController::class, 'index'])->name('vacantes.index');
+Route::get('vacantes/{id}', [VacanteController::class, 'show'])->name('vacantes.show');
+
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('posts', PostController::class);
@@ -64,6 +69,14 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'dashboard'], fu
     Route::post('webinar/{webinar}/download-registers', [WebinarController::class, 'download'])->name('download');
     Route::resource('talent', TalentController::class);
     Route::resource('video-posts', VideoPostController::class)->parameters(['video-posts' => 'video']);
+    
+    // Rutas admin de vacantes
+    Route::get('vacantes', [VacanteController::class, 'adminIndex'])->name('dashboard.vacantes.index');
+    Route::get('vacantes/create', [VacanteController::class, 'create'])->name('dashboard.vacantes.create');
+    Route::post('vacantes', [VacanteController::class, 'store'])->name('dashboard.vacantes.store');
+    Route::get('vacantes/{id}/edit', [VacanteController::class, 'edit'])->name('dashboard.vacantes.edit');
+    Route::put('vacantes/{id}', [VacanteController::class, 'update'])->name('dashboard.vacantes.update');
+    Route::delete('vacantes/{id}', [VacanteController::class, 'destroy'])->name('dashboard.vacantes.destroy');
 });
 
 Route::middleware('auth')->group(function () {

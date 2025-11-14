@@ -7,7 +7,7 @@
         <div class="flex items-center space-y-10 md:space-y-0 md:space-x-10 flex-col md:flex-row">
             <div class="w-full md:w-1/2">
                 <h4 class="!leading-relaxed text-center md:text-left">
-                    The development of the aerospace industry in Baja California originated over four decades ago with manufacturing activities. Currently, Baja California is one of the most important federal entities for the Mexican aerospace industry.
+                    The development of the aerospace industry in Baja California originated over six decades ago with manufacturing activities. Currently, Baja California is one of the most important federal entities for the Mexican aerospace industry.
                 </h4>
             </div>
 

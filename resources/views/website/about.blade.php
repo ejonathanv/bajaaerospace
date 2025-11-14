@@ -18,7 +18,7 @@
     <section class="flex flex-col md:flex-row items-center md:items-stretch">
         <div class="w-full md:w-1/2 p-10 md:py-48 md:px-16">
             <h1 class="text-4xl font-bold mb-7">
-                Vission
+                Vision
             </h1>
 
             <p class="text-gray-500 font-bold text-xl leading-relaxed">

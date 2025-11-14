@@ -21,6 +21,12 @@
                 <div class="p-3 md:p-5"><img src="{{ asset('img/education/LOGO_ITMexicali.jpg') }}" alt="IT Mexicali" class="w-16 md:w-20 h-auto"></div>
                 <div class="p-3 md:p-5"><img src="{{ asset('img/education/Tec_Ensenada.jpg') }}" alt="Tec Ensenada" class="w-24 md:w-28 h-auto"></div>
                 <div class="p-3 md:p-5"><img src="{{ asset('img/education/IBERO_Logo_03.png') }}" alt="IBERO" class="w-24 md:w-28 h-auto relative top-1"></div>
+                @for($i = 1; $i <= 4; $i++)
+                    @php
+                        $number = str_pad($i, 5, '0', STR_PAD_LEFT);
+                    @endphp
+                    <div class="p-3 md:p-5"><img src="{{ asset('img/education/2025/logo'.$number.'.jpeg') }}" alt="Logo" class="w-24 md:w-28 h-auto"></div>
+                @endfor
             </div>
         </div>
     </section>

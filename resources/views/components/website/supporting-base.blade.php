@@ -4,7 +4,7 @@
             Our Supporting Base
         </h2>
         <div class="flex items-center flex-wrap justify-center">
-            @for($i = 1; $i <= 102; $i++)
+            @for($i = 1; $i <= 101; $i++)
                 @php
                     $number = str_pad($i, 5, '0', STR_PAD_LEFT);
                 @endphp

@@ -5,6 +5,7 @@
     </h2>
 
     <div class="container flex flex-col md:flex-row items-stretch flex-wrap justify-center">
+        <!-- Commercial Aviation -->
         <div class="w-full md:w-1/4 px-2 mb-6">
             <div class="bg-white shadow rounded overflow-hidden h-full">
                 <img src="{{ asset('img/segments/commercial.jpg') }}" alt="" class="w-full h-auto object-cover">
@@ -18,6 +19,7 @@
                 </div>
             </div>
         </div>
+        <!-- Defense -->
         <div class="w-full md:w-1/4 px-2 mb-6">
             <div class="bg-white shadow rounded overflow-hidden h-full">
                 <img src="{{ asset('img/segments/defense.jpg') }}" alt="" class="w-full h-auto object-cover">
@@ -31,6 +33,7 @@
                 </div>
             </div>
         </div>
+        <!-- Space -->
         <div class="w-full md:w-1/4 px-2 mb-6">
             <div class="bg-white shadow rounded overflow-hidden h-full">
                 <img src="{{ asset('img/segments/space.jpg') }}" alt="" class="w-full h-auto object-cover">
@@ -44,6 +47,7 @@
                 </div>
             </div>
         </div>
+        <!-- Drones -->
         <div class="w-full md:w-1/4 px-2 mb-6">
             <div class="bg-white shadow rounded overflow-hidden h-full">
                 <img src="{{ asset('img/segments/drone.jpg') }}" alt="" class="w-full h-auto object-cover">
@@ -57,6 +61,7 @@
                 </div>
             </div>
         </div>
+        <!-- MRO (Maintenance and repair) -->
         <div class="w-full md:w-1/4 px-2 mb-6">
             <div class="bg-white shadow rounded overflow-hidden h-full">
             <img src="{{ asset('img/segments/mro.jpg') }}" alt="" class="w-full h-auto object-cover">
@@ -70,6 +75,7 @@
                 </div>
             </div>
         </div>
+        <!-- Logistic Air Cargo -->
         <div class="w-full md:w-1/4 px-2 mb-6">
             <div class="bg-white shadow rounded overflow-hidden h-full">
                 <img src="{{ asset('img/segments/logistic.jpg') }}" alt="" class="w-full h-auto object-cover">
@@ -83,6 +89,7 @@
                 </div>
             </div>
         </div>
+        <!-- Extreme Aerial Sports -->
         <div class="w-full md:w-1/4 px-2 mb-6">
             <div class="bg-white shadow rounded overflow-hidden h-full">
                 <img src="{{ asset('img/segments/extreme.jpg') }}" alt="" class="w-full h-auto object-cover">
@@ -92,6 +99,20 @@
                     </h1>
                     <p class="text-sm font-bold text-gray-500 mt-3 mb-0">
                         Thrilling adrenaline-filled experiences through exhilarating aerial sports activities, pushing the boundaries of human capabilities.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Airport and Airlines Services -->
+        <div class="w-full md:w-1/4 px-2 mb-6">
+            <div class="bg-white shadow rounded overflow-hidden h-full">
+                <img src="{{ asset('img/segments/airport.jpg') }}" alt="" class="w-full h-auto object-cover">
+                <div class="p-5">
+                    <h1 class="text-sm font-bold mb-0">
+                        Airport and Airlines Services
+                    </h1>
+                    <p class="text-sm font-bold text-gray-500 mt-3 mb-0">
+                        Comprehensive solutions for efficient airport operations and airline management, ensuring safe and seamless travel experiences.
                     </p>
                 </div>
             </div>

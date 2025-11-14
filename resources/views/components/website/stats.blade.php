@@ -3,10 +3,10 @@
         <div class="w-full md:w-4/12">
             <div class="text-center">
                 <h3>
-                    Jobs created in Baja California in 2021
+                    Jobs created in Baja California in 2024
                 </h3>
                 <h1 class="!text-6xl">
-                    +<span class="number_counter" data-number_counter="39800">0</span>
+                    +<span class="number_counter" data-number_counter="41236">0</span>
                 </h1>
             </div>
 
@@ -16,7 +16,7 @@
                     AS9100/ITAR/NADCAP <br> certified companies
                 </h3>
                 <h1 class="!text-6xl">
-                    +<span class="number_counter" data-number_counter="125">0</span>
+                    +<span class="number_counter" data-number_counter="128">0</span>
                 </h1>
             </div>
         </div>
@@ -24,10 +24,10 @@
         <div class="w-full md:w-4/12 ml-auto">
             <div class="text-center">
                 <h3>
-                    Export value in 2021
+                    Export value in 2024
                 </h3>
                 <h1 class="!text-6xl">
-                    $3.1 <br> Billion USD
+                    $3.8 <br> Billion USD
                 </h1>
             </div>
         </div>

@@ -12,6 +12,16 @@
                     <img src="{{ asset('img/partners/logos2024/actualizados/logo'.$number.'.jpg') }}" class="w-full h-auto">
                 </div>
             @endfor
+
+            <!-- Estos logos antes estaban en el archivo supporting-organizations.blade.php y fueron movidos a este archivo porque son logos de organizaciones que no son parte del cluster. -->
+            @for($i = 1; $i <= 15; $i++)
+                @php
+                    $number = str_pad($i, 5, '0', STR_PAD_LEFT);
+                @endphp
+                <div class="w-4/12 md:w-1/12 px-2 mb-4">
+                    <img src="{{ asset('img/partners/2025/logo'.$number.'.jpeg') }}" class="w-full h-auto">
+                </div>
+            @endfor
         </div>
     </div>
 </section>

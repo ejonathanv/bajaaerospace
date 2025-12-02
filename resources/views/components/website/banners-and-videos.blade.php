@@ -56,4 +56,10 @@
             </div>
         </div>
     </div>
+
+    <div class="container mt-10">
+        <a href="https://expomanufactura.infoexpo.com.mx/2026/ae/web/codigo/ZTLQ67671/es" target="_blank">
+            <img src="{{ asset('img/banners/expo-manufactura-banner.jpeg')}}" alt="Expo Manufactura Banner" class="w-full h-auto shadow-md rounded">
+        </a>
+    </div>
 </section>

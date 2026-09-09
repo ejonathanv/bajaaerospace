@@ -8,6 +8,7 @@
     <x-website.video></x-website.video>
     <x-website.leaderships></x-website.leaderships>
     <x-website.stats></x-website.stats>
+    <x-website.facebook-highlight></x-website.facebook-highlight>
     <x-website.recent-posts></x-website.recent-posts>
     <x-website.recent-video-posts></x-website.recent-video-posts>
     <x-website.events></x-website.events>
